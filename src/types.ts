@@ -86,7 +86,6 @@ export interface BlogPost {
   readTime: string;
   author: string;
   tags: string[];
-  likes: number;
   featured?: boolean;
 }
 

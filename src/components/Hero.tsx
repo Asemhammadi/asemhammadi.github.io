@@ -39,7 +39,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
 
             {/* Title & Name */}
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight text-balance">
                 {personalInfo.name}, <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">{personalInfo.credentials}</span>
               </h1>
               <p className="text-xl sm:text-2xl font-semibold text-slate-200">
@@ -62,9 +62,9 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
                 'PMP® Project Delivery',
                 'Active Directory & Networks'
               ].map((strength, i) => (
-                <div key={i} className="flex items-center gap-2 text-xs text-slate-300 bg-slate-900/80 border border-slate-800/80 px-3 py-2 rounded-xl">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                  <span className="truncate">{strength}</span>
+                <div key={i} className="flex items-start gap-2 text-xs text-slate-300 bg-slate-900/80 border border-slate-800/80 px-3 py-2 rounded-xl">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="leading-snug">{strength}</span>
                 </div>
               ))}
             </div>
@@ -116,19 +116,32 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
           <div className="lg:col-span-5 relative">
             
             {/* Visual Profile Display Box */}
-            <div className="relative rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800/80 p-5 sm:p-6 shadow-2xl space-y-6">
-              
-              {/* Executive Portrait Card showcasing asem_alhammadi_photo.png */}
-              <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 group shadow-xl">
-                <img
-                  src={photoUrl}
-                  alt="Asem Alhammadi, M.Sc., PMP®"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-80 sm:h-96 object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    e.currentTarget.src = '/asem_alhammadi_photo.png';
-                  }}
-                />
+            <div id="hero-profile-panel" className="relative rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800/80 p-5 sm:p-6 shadow-2xl space-y-6">
+
+              {/* Executive portrait. Falls back to a monogram plate until a photo is supplied —
+                  see photoUrl in src/data/portfolioData.ts. */}
+              <div id="hero-portrait" className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 group shadow-xl">
+                {photoUrl ? (
+                  <img
+                    src={photoUrl}
+                    alt={`${personalInfo.name}, ${personalInfo.credentials}`}
+                    className="w-full h-80 sm:h-96 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div
+                    id="hero-monogram"
+                    role="img"
+                    aria-label={`${personalInfo.name} — portrait placeholder`}
+                    className="w-full h-80 sm:h-96 flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900"
+                  >
+                    <div className="w-28 h-28 rounded-3xl bg-slate-900 border border-slate-800 flex items-center justify-center shadow-inner">
+                      <span className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-teal-600">
+                        {personalInfo.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
+                      </span>
+                    </div>
+                    <div className="w-14 h-0.5 rounded-full bg-emerald-500/30" />
+                  </div>
+                )}
 
                 {/* Top Badge Overlay */}
                 <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-emerald-500/40 text-emerald-300 text-xs font-semibold flex items-center gap-1.5 shadow-lg">
@@ -137,7 +150,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
                 </div>
 
                 {/* Bottom Info Gradient Overlay */}
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-4 pt-12 text-left pointer-events-none">
+                <div id="hero-portrait-overlay" className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-4 pt-12 text-left pointer-events-none">
                   <div className="flex items-center gap-2">
                     <h3 className="text-lg font-bold text-white tracking-tight">{personalInfo.name}, {personalInfo.credentials}</h3>
                     <Shield className="w-4 h-4 text-emerald-400 shrink-0" />

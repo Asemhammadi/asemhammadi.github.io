@@ -5,7 +5,10 @@ export const PERSONAL_INFO = {
   name: "Asem Alhammadi",
   title: "Senior Systems Integrator & IT Project Manager",
   credentials: "M.Sc., PMP®",
-  photoUrl: "/asem_alhammadi_photo.png",
+  // No photo yet — the hero shows a monogram plate while this is empty. To add one:
+  // drop the file in src/assets/, `import photo from '../assets/<file>'`, and set photoUrl: photo.
+  // Import it (don't hardcode "/file.png") so Vite rewrites the URL for the deployed base path.
+  photoUrl: "",
   tagline: "Bridging Physical Security, IT Infrastructure & 24x7 Healthcare Operations",
   location: "Malden, MA 02148",
   phone: "781-426-7496",
@@ -14,7 +17,7 @@ export const PERSONAL_INFO = {
   summary: "IT Project Manager, Systems Integrator, and Academic Researcher with 15+ years of combined experience across hospital public safety systems, network infrastructure, IT support, university lecturing, and wireless communications research. M.Sc. graduate in Communication Engineering (Grade: 92.76%) and M.S. in CIS from Boston University. Experienced in managing complex IT projects, pfSense firewalls, Milestone VMS, Lenel OnGuard, and university IT labs.",
   yearsExperience: "15+",
   projectsCompleted: "50+",
-  facilitiesManaged: "3 Hospital Campuses",
+  facilitiesManaged: "3",
   certificationsCount: "10+"
 };
 
@@ -495,7 +498,6 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "6 min read",
     author: "Asem Alhammadi, M.Sc., PMP",
     tags: ["Physical Security", "Healthcare IT", "Active Directory", "Lenel", "Milestone"],
-    likes: 42,
     featured: true,
     content: `
 # Integrating Enterprise Physical Security with Healthcare IT Infrastructure
@@ -533,7 +535,6 @@ At Boston Medical Center, harmonizing security technology with IT infrastructure
     readTime: "8 min read",
     author: "Asem Alhammadi, M.Sc., PMP",
     tags: ["PMP", "Site Readiness", "Construction", "Vendor Coordination", "Commissioning"],
-    likes: 38,
     featured: true,
     content: `
 # Navigating Site Readiness for Public Safety Tech in Active Construction
@@ -565,7 +566,6 @@ When issues are identified early, commissioning delays drop significantly, allow
     readTime: "7 min read",
     author: "Asem Alhammadi, M.Sc., PMP",
     tags: ["PMP", "Hospital Acquisition", "Leadership", "Stakeholder Alignment"],
-    likes: 29,
     featured: false,
     content: `
 # PMP Strategies for Multi-Site Healthcare Hospital Acquisitions
@@ -599,7 +599,6 @@ Through proactive stakeholder engagement and risk mitigation, site acquisitions 
     readTime: "5 min read",
     author: "Asem Alhammadi, M.Sc., PMP",
     tags: ["VMS", "Milestone", "Networking", "Video Analytics", "H.265"],
-    likes: 51,
     featured: false,
     content: `
 # Optimizing IP Video Surveillance Throughput in Enterprise Networks

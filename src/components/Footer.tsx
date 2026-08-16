@@ -59,7 +59,7 @@ export function Footer({ onOpenResumeModal }: FooterProps) {
               >
                 <span className="flex items-center gap-2">
                   <FileText className="w-4 h-4 text-emerald-400" />
-                  <span>Download Resume PDF</span>
+                  <span>View Full Resume</span>
                 </span>
               </button>
 

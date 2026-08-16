@@ -1,33 +1,21 @@
-import React, { useState } from 'react';
-import { BookOpen, Search, Heart, Clock, Calendar, User, Tag, ArrowRight, X, ThumbsUp, MessageSquare } from 'lucide-react';
+import { useState, useRef, useCallback } from 'react';
+import { BookOpen, Search, Clock, Calendar, User, Tag, ArrowRight, X } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
 import { BlogPost } from '../types';
+import { useModalA11y } from '../hooks/useModalA11y';
 
 export function BlogSection() {
   const { blogPostsData } = useSiteData();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeArticle, setActiveArticle] = useState<BlogPost | null>(null);
-  const [articleLikes, setArticleLikes] = useState<Record<string, number>>({
-    'post-1': 42,
-    'post-2': 38,
-    'post-3': 29,
-    'post-4': 51
-  });
-  const [likedPosts, setLikedPosts] = useState<Record<string, boolean>>({});
+
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeArticle = useCallback(() => setActiveArticle(null), []);
+
+  useModalA11y(activeArticle !== null, closeArticle, panelRef);
 
   const categories = ['All', 'Healthcare IT', 'Project Management', 'Networking', 'Physical Security'];
-
-  const handleLike = (id: string, e?: React.MouseEvent) => {
-    if (e) e.stopPropagation();
-    if (likedPosts[id]) {
-      setArticleLikes(prev => ({ ...prev, [id]: (prev[id] || 0) - 1 }));
-      setLikedPosts(prev => ({ ...prev, [id]: false }));
-    } else {
-      setArticleLikes(prev => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
-      setLikedPosts(prev => ({ ...prev, [id]: true }));
-    }
-  };
 
   const openArticle = (post: BlogPost) => {
     setActiveArticle(post);
@@ -142,7 +130,7 @@ export function BlogSection() {
 
               </div>
 
-              {/* Footer CTA & Like */}
+              {/* Footer CTA */}
               <div className="pt-6 mt-6 border-t border-slate-800/80 flex items-center justify-between">
                 <button
                   id={`read-article-${post.id}`}
@@ -153,18 +141,10 @@ export function BlogSection() {
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
-                <button
-                  id={`like-post-${post.id}`}
-                  onClick={(e) => handleLike(post.id, e)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all ${
-                    likedPosts[post.id]
-                      ? 'bg-rose-500/20 border-rose-500/40 text-rose-300'
-                      : 'bg-slate-800 border-slate-700/80 text-slate-400 hover:text-white'
-                  }`}
-                >
-                  <Heart className={`w-3.5 h-3.5 ${likedPosts[post.id] ? 'fill-rose-400 text-rose-400' : ''}`} />
-                  <span>{articleLikes[post.id] || post.likes}</span>
-                </button>
+                <span className="flex items-center gap-1.5 text-xs text-slate-400">
+                  <Clock className="w-3.5 h-3.5 text-slate-500" />
+                  {post.readTime}
+                </span>
               </div>
 
             </div>
@@ -175,16 +155,27 @@ export function BlogSection() {
 
       {/* Article Reader Modal */}
       {activeArticle && (
-        <div id="article-modal" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto animate-fadeIn">
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
-            
+        <div
+          id="article-modal"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto animate-fadeIn"
+          onClick={closeArticle}
+        >
+          <div
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="article-modal-title"
+            onClick={(e) => e.stopPropagation()}
+            className="bg-slate-900 border border-slate-700 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+          >
+
             {/* Reader Header */}
             <div className="sticky top-0 bg-slate-900/95 backdrop-blur-md p-6 border-b border-slate-800 flex items-start justify-between gap-4 z-10">
               <div>
                 <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">
                   {activeArticle.category} Article
                 </span>
-                <h3 className="text-2xl font-extrabold text-white mt-1">
+                <h3 id="article-modal-title" className="text-2xl font-extrabold text-white mt-1">
                   {activeArticle.title}
                 </h3>
                 <div className="flex items-center gap-4 text-xs text-slate-400 mt-2">
@@ -201,7 +192,8 @@ export function BlogSection() {
 
               <button
                 id="close-article-modal-btn"
-                onClick={() => setActiveArticle(null)}
+                onClick={closeArticle}
+                aria-label="Close article"
                 className="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white transition-colors"
               >
                 <X className="w-5 h-5" />
@@ -235,23 +227,14 @@ export function BlogSection() {
             </div>
 
             {/* Reader Footer Actions */}
-            <div className="p-6 border-t border-slate-800 flex items-center justify-between">
-              <button
-                id={`article-modal-like-btn`}
-                onClick={() => handleLike(activeArticle.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold border transition-all ${
-                  likedPosts[activeArticle.id]
-                    ? 'bg-rose-500/20 border-rose-500/40 text-rose-300'
-                    : 'bg-slate-800 border-slate-700 text-slate-300 hover:text-white'
-                }`}
-              >
-                <Heart className={`w-4 h-4 ${likedPosts[activeArticle.id] ? 'fill-rose-400 text-rose-400' : ''}`} />
-                <span>{articleLikes[activeArticle.id] || activeArticle.likes} Applauds</span>
-              </button>
+            <div className="p-6 border-t border-slate-800 flex items-center justify-between gap-4">
+              <span className="text-xs text-slate-400">
+                Written by {activeArticle.author}
+              </span>
 
               <button
                 id="close-article-footer-btn"
-                onClick={() => setActiveArticle(null)}
+                onClick={closeArticle}
                 className="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors"
               >
                 Close Article

@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { FileText, Download, Copy, Check, X, Printer, Shield, Award, Building, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
-import { PERSONAL_INFO, WORK_EXPERIENCE, EDUCATION_DATA, CERTIFICATIONS, TECHNICAL_SKILLS, AWARDS_RECOGNITION } from '../data/portfolioData';
+import { useState, useRef } from 'react';
+import { FileText, Copy, Check, X, Printer } from 'lucide-react';
+import { PERSONAL_INFO, WORK_EXPERIENCE, EDUCATION_DATA, CERTIFICATIONS, TECHNICAL_SKILLS } from '../data/portfolioData';
+import { useModalA11y } from '../hooks/useModalA11y';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -9,6 +10,9 @@ interface ResumeModalProps {
 
 export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const [copied, setCopied] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useModalA11y(isOpen, onClose, panelRef);
 
   if (!isOpen) return null;
 
@@ -48,9 +52,20 @@ ${TECHNICAL_SKILLS.map(s => `${s.name}`).join(' | ')}
   };
 
   return (
-    <div id="resume-modal-overlay" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/85 backdrop-blur-md animate-fadeIn print:p-0 print:bg-white print:static">
-      <div className="bg-slate-900 border border-slate-700 rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative print:border-none print:shadow-none print:max-h-none print:w-full">
-        
+    <div
+      id="resume-modal-overlay"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/85 backdrop-blur-md animate-fadeIn print:p-0 print:bg-white print:static"
+      onClick={onClose}
+    >
+      <div
+        ref={panelRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="resume-modal-title"
+        onClick={(e) => e.stopPropagation()}
+        className="bg-slate-900 border border-slate-700 rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative print:border-none print:shadow-none print:max-h-none print:w-full"
+      >
+
         {/* Header Controls */}
         <div className="p-5 bg-slate-950 border-b border-slate-800 flex items-center justify-between shrink-0 print:hidden">
           <div className="flex items-center gap-3">
@@ -58,7 +73,7 @@ ${TECHNICAL_SKILLS.map(s => `${s.name}`).join(' | ')}
               <FileText className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base sm:text-lg font-bold text-white">Curriculum Vitae / Resume</h3>
+              <h3 id="resume-modal-title" className="text-base sm:text-lg font-bold text-white">Curriculum Vitae / Resume</h3>
               <p className="text-xs text-slate-400">Asem Alhammadi, M.Sc., PMP®</p>
             </div>
           </div>
@@ -85,6 +100,7 @@ ${TECHNICAL_SKILLS.map(s => `${s.name}`).join(' | ')}
             <button
               id="close-resume-modal-btn"
               onClick={onClose}
+              aria-label="Close resume"
               className="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white transition-colors"
             >
               <X className="w-5 h-5" />

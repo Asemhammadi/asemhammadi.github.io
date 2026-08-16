@@ -32,14 +32,15 @@ export function Header({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Short labels for the desktop bar; the mobile drawer has room for the full names.
   const navItems = [
-    { id: 'hero', label: 'Overview' },
-    { id: 'experience', label: 'Career History' },
-    { id: 'services', label: 'Services' },
-    { id: 'projects', label: 'Portfolio Projects' },
-    { id: 'skills', label: 'Skills & Credentials' },
-    { id: 'blog', label: 'Technical Articles' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'hero', label: 'Overview', longLabel: 'Overview' },
+    { id: 'experience', label: 'Career', longLabel: 'Career History' },
+    { id: 'services', label: 'Services', longLabel: 'Services' },
+    { id: 'projects', label: 'Projects', longLabel: 'Portfolio Projects' },
+    { id: 'skills', label: 'Skills', longLabel: 'Skills & Credentials' },
+    { id: 'blog', label: 'Articles', longLabel: 'Technical Articles' },
+    { id: 'contact', label: 'Contact', longLabel: 'Contact' },
   ];
 
   const scrollToSection = (id: string) => {
@@ -68,19 +69,19 @@ export function Header({
             onClick={() => scrollToSection('hero')}
             className="flex items-center gap-3 text-left group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-slate-950 font-bold shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-slate-950 font-bold shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
               <Shield className="w-5 h-5 text-slate-950" />
             </div>
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-white font-bold tracking-tight text-base sm:text-lg group-hover:text-emerald-400 transition-colors">
+                <span className="text-white font-bold tracking-tight text-base sm:text-lg whitespace-nowrap group-hover:text-emerald-400 transition-colors">
                   {PERSONAL_INFO.name}
                 </span>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono font-medium">
+                <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono font-medium whitespace-nowrap hidden xl:inline">
                   {PERSONAL_INFO.credentials}
                 </span>
               </div>
-              <p className="text-xs text-slate-400 hidden sm:block">
+              <p className="text-xs text-slate-400 hidden sm:block whitespace-nowrap">
                 Systems Integration Lead & PMP®
               </p>
             </div>
@@ -95,7 +96,8 @@ export function Header({
                   key={item.id}
                   id={`nav-item-${item.id}`}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  aria-current={isActive ? 'true' : undefined}
+                  className={`px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-200 ${
                     isActive
                       ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-sm'
                       : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
@@ -179,7 +181,7 @@ export function Header({
                     : 'text-slate-300 hover:bg-slate-900'
                 }`}
               >
-                <span>{item.label}</span>
+                <span>{item.longLabel}</span>
                 <ChevronRight className="w-4 h-4 opacity-50" />
               </button>
             ))}

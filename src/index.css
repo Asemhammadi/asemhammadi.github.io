@@ -4,6 +4,45 @@
   body {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+  /* Every interactive element gets a visible keyboard focus ring. Several components
+     set focus:outline-none for mouse users, which otherwise leaves keyboard users blind. */
+  :focus-visible {
+    outline: 2px solid #34d399;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* Keyboard users land here first and can jump past the nav. Visible only when focused. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.65rem 1.1rem;
+  border-radius: 0.75rem;
+  background: #34d399;
+  color: #020617;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Respect the OS "reduce motion" setting: the hero has pinging and pulsing
+   indicators, and cards animate on hover. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ==========================================
@@ -66,6 +105,7 @@
 .light-theme .bg-slate-900,
 .light-theme .bg-slate-950,
 .light-theme .bg-slate-900\/60,
+.light-theme .bg-slate-900\/80,
 .light-theme .bg-slate-900\/90,
 .light-theme .bg-slate-950\/60,
 .light-theme .bg-slate-950\/85,
@@ -81,6 +121,33 @@
 .light-theme .hover\:border-slate-700:hover {
   border-color: #6ee7b7 !important;
   box-shadow: 0 10px 25px -3px rgba(16, 185, 129, 0.08), 0 4px 6px -2px rgba(16, 185, 129, 0.04) !important;
+}
+
+/* Hero profile card in Light Mode.
+   These four elements paint with gradients rather than a bg-slate-* class, so the
+   class-based overrides above cannot reach them and they'd stay dark on a light page. */
+.light-theme #hero-profile-panel {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.12) !important;
+}
+
+.light-theme #hero-monogram {
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 50%, #f8fafc 100%) !important;
+}
+
+.light-theme #hero-monogram > div {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light-theme #hero-portrait-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0.88) 55%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
 }
 
 /* Borders in Light Mode */

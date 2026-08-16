@@ -60,7 +60,7 @@ interface SiteContextType {
 // edit that file and redeploy — there is no runtime editor.
 const siteData: SiteContextType = {
   personalInfo: PERSONAL_INFO,
-  photoUrl: PERSONAL_INFO.photoUrl || '/asem_alhammadi_photo.png',
+  photoUrl: PERSONAL_INFO.photoUrl || '',
   workExperience: WORK_EXPERIENCE,
   educationData: EDUCATION_DATA,
   publicationsData: PUBLICATIONS_DATA,

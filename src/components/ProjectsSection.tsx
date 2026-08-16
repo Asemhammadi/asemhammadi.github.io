@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { Shield, Building2, Cpu, CheckCircle2, ArrowRight, X, Sparkles, ExternalLink, AlertTriangle, Layers } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
 import { ProjectItem } from '../types';
+import { useModalA11y } from '../hooks/useModalA11y';
 
 export function ProjectsSection() {
   const { projectsData } = useSiteData();
@@ -13,6 +14,11 @@ export function ProjectsSection() {
   const filteredProjects = selectedCategory === 'All'
     ? projectsData
     : projectsData.filter(p => p.category === selectedCategory);
+
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeProjectModal = useCallback(() => setActiveModalProject(null), []);
+
+  useModalA11y(activeModalProject !== null, closeProjectModal, panelRef);
 
   const openProjectModal = (proj: ProjectItem) => {
     setActiveModalProject(proj);
@@ -133,16 +139,27 @@ export function ProjectsSection() {
 
       {/* Case Study Modal */}
       {activeModalProject && (
-        <div id="project-modal" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto animate-fadeIn">
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
-            
+        <div
+          id="project-modal"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto animate-fadeIn"
+          onClick={closeProjectModal}
+        >
+          <div
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
+            onClick={(e) => e.stopPropagation()}
+            className="bg-slate-900 border border-slate-700 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+          >
+
             {/* Modal Header */}
             <div className="sticky top-0 bg-slate-900/95 backdrop-blur-md p-6 border-b border-slate-800 flex items-start justify-between gap-4 z-10">
               <div>
                 <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider font-bold">
                   {activeModalProject.category} Case Study
                 </span>
-                <h3 className="text-2xl font-extrabold text-white mt-1">
+                <h3 id="project-modal-title" className="text-2xl font-extrabold text-white mt-1">
                   {activeModalProject.title}
                 </h3>
                 <p className="text-xs text-slate-400">
@@ -152,7 +169,7 @@ export function ProjectsSection() {
 
               <button
                 id="close-project-modal-btn"
-                onClick={() => setActiveModalProject(null)}
+                onClick={closeProjectModal}
                 className="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
               >
                 <X className="w-5 h-5" />
@@ -240,7 +257,7 @@ export function ProjectsSection() {
             <div className="p-6 border-t border-slate-800 flex justify-end">
               <button
                 id="close-modal-footer-btn"
-                onClick={() => setActiveModalProject(null)}
+                onClick={closeProjectModal}
                 className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors"
               >
                 Close Case Study

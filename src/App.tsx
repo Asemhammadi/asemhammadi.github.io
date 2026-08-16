@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { SiteProvider } from './context/SiteContext';
-import { SEOHead } from './components/SEOHead';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { CareerTimeline } from './components/CareerTimeline';
@@ -41,8 +40,7 @@ function PortfolioApp() {
       theme === 'dark' ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900 light-theme'
     }`}>
 
-      {/* SEO & OpenGraph Injector */}
-      <SEOHead activeSection={activeSection} />
+      <a href="#main" className="skip-link">Skip to main content</a>
 
       {/* Main Header Nav */}
       <Header
@@ -54,7 +52,7 @@ function PortfolioApp() {
       />
 
       {/* Main Body Content */}
-      <main>
+      <main id="main">
         <Hero
           onOpenResumeModal={() => setIsResumeModalOpen(true)}
           onNavigateSection={(sec) => {
