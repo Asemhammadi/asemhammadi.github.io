@@ -3,11 +3,7 @@ import { Shield, Building2, Cpu, CheckCircle2, ArrowRight, X, Sparkles, External
 import { useSiteData } from '../context/SiteContext';
 import { ProjectItem } from '../types';
 
-interface ProjectsSectionProps {
-  onLogProjectView: (projectName: string) => void;
-}
-
-export function ProjectsSection({ onLogProjectView }: ProjectsSectionProps) {
+export function ProjectsSection() {
   const { projectsData } = useSiteData();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
@@ -20,7 +16,6 @@ export function ProjectsSection({ onLogProjectView }: ProjectsSectionProps) {
 
   const openProjectModal = (proj: ProjectItem) => {
     setActiveModalProject(proj);
-    onLogProjectView(proj.title);
   };
 
   return (

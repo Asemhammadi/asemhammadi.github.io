@@ -7,6 +7,9 @@ interface ContactSectionProps {
   onOpenResumeModal: () => void;
 }
 
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+
 export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: ContactSectionProps) {
   const { personalInfo } = useSiteData();
   const [formData, setFormData] = useState({
@@ -16,6 +19,8 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
     serviceInterest: selectedServiceInterest || '',
     message: ''
   });
+  // botcheck is a honeypot: real users never see it, bots fill it in and get rejected.
+  const [botcheck, setBotcheck] = useState(false);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [responseMsg, setResponseMsg] = useState('');
 
@@ -27,13 +32,31 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
       return;
     }
 
+    if (!WEB3FORMS_KEY) {
+      setStatus('error');
+      setResponseMsg(
+        `This form is not configured yet. Please email ${personalInfo.email} or call ${personalInfo.phone} directly.`
+      );
+      return;
+    }
+
     setStatus('submitting');
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Portfolio inquiry: ${formData.subject || 'General'}`,
+          from_name: 'Portfolio Contact Form',
+          replyto: formData.email,
+          botcheck,
+          name: formData.name,
+          email: formData.email,
+          service_interest: formData.serviceInterest || 'General / Career Opportunity',
+          message: formData.message
+        })
       });
 
       const data = await res.json();
@@ -49,7 +72,7 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
         });
       } else {
         setStatus('error');
-        setResponseMsg(data.error || 'Failed to submit message. Please try again.');
+        setResponseMsg(data.message || 'Failed to submit message. Please try again.');
       }
     } catch (err) {
       setStatus('error');
@@ -177,7 +200,19 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                
+
+                {/* Spam honeypot — hidden from real users, checked by Web3Forms */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  checked={botcheck}
+                  onChange={(e) => setBotcheck(e.target.checked)}
+                  className="hidden"
+                  aria-hidden="true"
+                />
+
                 {status === 'error' && (
                   <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 shrink-0" />

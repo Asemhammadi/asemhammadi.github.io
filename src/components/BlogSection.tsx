@@ -3,11 +3,7 @@ import { BookOpen, Search, Heart, Clock, Calendar, User, Tag, ArrowRight, X, Thu
 import { useSiteData } from '../context/SiteContext';
 import { BlogPost } from '../types';
 
-interface BlogSectionProps {
-  onLogArticleRead: (title: string) => void;
-}
-
-export function BlogSection({ onLogArticleRead }: BlogSectionProps) {
+export function BlogSection() {
   const { blogPostsData } = useSiteData();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -35,7 +31,6 @@ export function BlogSection({ onLogArticleRead }: BlogSectionProps) {
 
   const openArticle = (post: BlogPost) => {
     setActiveArticle(post);
-    onLogArticleRead(post.title);
   };
 
   const filteredPosts = blogPostsData.filter(post => {

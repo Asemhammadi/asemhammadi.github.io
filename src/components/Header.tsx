@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Bot, BarChart3, Menu, X, Shield, Phone, Mail, FileText, ChevronRight, Sun, Moon, Lock, Settings } from 'lucide-react';
+import { Menu, X, Shield, Phone, Mail, FileText, ChevronRight, Sun, Moon } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeaderProps {
@@ -7,10 +7,7 @@ interface HeaderProps {
   setActiveSection: (sec: string) => void;
   theme: 'dark' | 'light';
   onToggleTheme: () => void;
-  onOpenAIModal: () => void;
-  onOpenAnalyticsModal: () => void;
   onOpenResumeModal: () => void;
-  onOpenAdminModal: () => void;
 }
 
 export function Header({
@@ -18,10 +15,7 @@ export function Header({
   setActiveSection,
   theme,
   onToggleTheme,
-  onOpenAIModal,
-  onOpenAnalyticsModal,
-  onOpenResumeModal,
-  onOpenAdminModal
+  onOpenResumeModal
 }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -129,36 +123,6 @@ export function Header({
               )}
             </button>
 
-            {/* Admin Control Panel Button */}
-            <button
-              id="admin-panel-header-btn"
-              onClick={onOpenAdminModal}
-              title="Admin Control Panel"
-              className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:bg-slate-800 transition-colors cursor-pointer flex items-center gap-1.5"
-            >
-              <Lock className="w-4 h-4 text-emerald-400" />
-              <span className="text-xs font-semibold hidden xl:inline">Admin</span>
-            </button>
-
-            <button
-              id="ai-assistant-header-btn"
-              onClick={onOpenAIModal}
-              title="Ask Asem's AI Career Assistant"
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/30 transition-all shadow-sm cursor-pointer"
-            >
-              <Bot className="w-4 h-4 text-emerald-400 animate-pulse" />
-              <span>Career AI</span>
-            </button>
-
-            <button
-              id="analytics-header-btn"
-              onClick={onOpenAnalyticsModal}
-              title="Visitor Analytics Dashboard"
-              className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
-            >
-              <BarChart3 className="w-4 h-4" />
-            </button>
-
             <button
               id="resume-header-btn"
               onClick={onOpenResumeModal}
@@ -179,20 +143,6 @@ export function Header({
               {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-400" />}
             </button>
             <button
-              id="mobile-admin-btn"
-              onClick={onOpenAdminModal}
-              className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-emerald-400"
-            >
-              <Lock className="w-4 h-4" />
-            </button>
-            <button
-              id="mobile-ai-btn"
-              onClick={onOpenAIModal}
-              className="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400"
-            >
-              <Bot className="w-5 h-5" />
-            </button>
-            <button
               id="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
@@ -206,22 +156,14 @@ export function Header({
       {/* Mobile Menu Drawer */}
       {isMobileMenuOpen && (
         <div id="mobile-menu-drawer" className="lg:hidden bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 px-4 pt-3 pb-6 mt-3 space-y-3 shadow-2xl">
-          <div className="grid grid-cols-2 gap-2 pb-2 border-b border-slate-800">
+          <div className="pb-2 border-b border-slate-800">
             <button
               id="mobile-resume-btn"
               onClick={() => { setIsMobileMenuOpen(false); onOpenResumeModal(); }}
-              className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs"
+              className="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs"
             >
               <FileText className="w-4 h-4" />
               View Resume
-            </button>
-            <button
-              id="mobile-analytics-btn"
-              onClick={() => { setIsMobileMenuOpen(false); onOpenAnalyticsModal(); }}
-              className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs font-medium"
-            >
-              <BarChart3 className="w-4 h-4 text-emerald-400" />
-              Analytics
             </button>
           </div>
 

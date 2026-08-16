@@ -1,20 +1,63 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Asem Alhammadi — Portfolio Website
 
-# Run and deploy your AI Studio app
+Personal portfolio for **Asem Alhammadi, M.Sc., PMP®** — Senior Systems Integrator & IT Project
+Manager. Career history, services, portfolio projects, technical articles, and a contact form.
 
-This contains everything you need to run your app locally.
+A fully static site: React + TypeScript + Vite + Tailwind, built to plain HTML/CSS/JS and hosted
+free on GitHub Pages. There is no backend.
 
-View your app in AI Studio: https://ai.studio/apps/6d049b53-8055-4651-9266-515931434808
+## Run locally
 
-## Run Locally
+**Prerequisites:** Node.js 20+
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+cp .env.example .env.local   # then fill in VITE_WEB3FORMS_KEY
+npm run dev
+```
 
+The dev server prints a local URL. `npm run lint` typechecks; `npm run build` produces `dist/`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Configuration
+
+Both values are injected at build time — see [.env.example](.env.example).
+
+| Variable | Purpose |
+| --- | --- |
+| `VITE_WEB3FORMS_KEY` | Web3Forms access key for the contact form. Stored as a GitHub repo secret of the same name. Without it, the form tells visitors to email directly instead of failing silently. |
+| `VITE_BASE_PATH` | URL prefix for built assets. The deploy workflow sets this to `/<repo-name>/`. Set to `/` if you move to a custom domain. |
+
+Analytics is a commented-out snippet in [index.html](index.html) — uncomment either the Cloudflare
+Web Analytics or the Google Analytics 4 block and paste in the ID.
+
+Setup instructions for the site owner (how to obtain the Web3Forms key and the analytics ID) live
+in [docs/OWNER-SETUP.md](docs/OWNER-SETUP.md).
+
+## Editing site content
+
+All content — bio, jobs, education, projects, services, articles, skills, certifications, awards —
+lives in [src/data/portfolioData.ts](src/data/portfolioData.ts). Edit that file and push; the
+deploy workflow rebuilds automatically. The profile photo is [public/asem_alhammadi_photo.png](public/asem_alhammadi_photo.png).
+
+## Deployment
+
+Pushing to `main` triggers [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which
+typechecks, builds, and publishes to GitHub Pages.
+
+One-time repo setup:
+
+1. **Settings → Pages → Source: GitHub Actions**
+2. **Settings → Secrets and variables → Actions → New repository secret**, named
+   `VITE_WEB3FORMS_KEY`
+3. The repo must be **public** for Pages on a free GitHub account
+
+## Bringing back the AI assistant
+
+[src/components/AICareerAssistantModal.tsx](src/components/AICareerAssistantModal.tsx) is a
+complete Gemini-powered career assistant, currently dormant and not rendered. It needs a server to
+hold `GEMINI_API_KEY` — the key cannot be shipped to the browser. To revive it, deploy to Vercel or
+Netlify instead of Pages, restore the `/api/chat` handler (see `server.ts` in git history before
+the static migration), and re-add the entry points in `Header`, `Hero`, and `Footer`.
+
+Git history also contains the removed Express server, the localStorage-backed admin panel, and the
+visitor-analytics modal, should any of them be worth revisiting.

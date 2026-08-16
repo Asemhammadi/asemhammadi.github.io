@@ -1,14 +1,12 @@
-import { Shield, Award, Building2, Cpu, CheckCircle2, ArrowRight, Download, Bot, Mail, Linkedin, Lock, Settings } from 'lucide-react';
+import { Shield, Award, Building2, CheckCircle2, ArrowRight, Download, Mail, Linkedin } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
 
 interface HeroProps {
-  onOpenAIModal: () => void;
   onOpenResumeModal: () => void;
-  onOpenAdminModal: () => void;
   onNavigateSection: (sec: string) => void;
 }
 
-export function Hero({ onOpenAIModal, onOpenResumeModal, onOpenAdminModal, onNavigateSection }: HeroProps) {
+export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
   const { personalInfo, photoUrl } = useSiteData();
 
   return (
@@ -83,15 +81,6 @@ export function Hero({ onOpenAIModal, onOpenResumeModal, onOpenAdminModal, onNav
               </button>
 
               <button
-                id="hero-ask-ai-btn"
-                onClick={onOpenAIModal}
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-emerald-500/40 text-emerald-300 font-semibold text-sm transition-all shadow-md"
-              >
-                <Bot className="w-4 h-4 text-emerald-400" />
-                <span>Ask AI Career Assistant</span>
-              </button>
-
-              <button
                 id="hero-download-resume-btn"
                 onClick={onOpenResumeModal}
                 className="flex items-center gap-2 px-4 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 text-sm font-medium transition-all"
@@ -141,22 +130,11 @@ export function Hero({ onOpenAIModal, onOpenResumeModal, onOpenAdminModal, onNav
                   }}
                 />
 
-                {/* Protected Image Status Indicator */}
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-slate-800 text-slate-300 text-[11px] font-medium flex items-center gap-1.5 shadow-lg">
-                  <Lock className="w-3 h-3 text-emerald-400" />
-                  <span>Admin Protected Photo</span>
-                </div>
-
                 {/* Top Badge Overlay */}
-                <button
-                  onClick={onOpenAdminModal}
-                  title="Open Admin Control Panel to manage photo"
-                  className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-emerald-500/40 hover:border-emerald-500 text-emerald-300 text-xs font-semibold flex items-center gap-1.5 shadow-lg transition-colors cursor-pointer"
-                >
+                <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-emerald-500/40 text-emerald-300 text-xs font-semibold flex items-center gap-1.5 shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>PMP® Lead</span>
-                  <Settings className="w-3 h-3 text-emerald-400 ml-0.5" />
-                </button>
+                </div>
 
                 {/* Bottom Info Gradient Overlay */}
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent p-4 pt-12 text-left pointer-events-none">

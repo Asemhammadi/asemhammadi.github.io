@@ -1,3 +1,6 @@
+// DORMANT — not rendered anywhere. Kept for a future revival of the Gemini career
+// assistant, which needs a backend to hold the API key (see README "Bringing back
+// the AI assistant"). It posts to /api/chat, an endpoint that no longer exists.
 import { useState, useRef, useEffect } from 'react';
 import { Bot, Send, X, Sparkles, User, RefreshCw, MessageSquare, Phone, Mail, FileText } from 'lucide-react';
 import { ChatMessage } from '../types';
