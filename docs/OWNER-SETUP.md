@@ -1,6 +1,6 @@
 # Site owner setup — what we need from you
 
-Three short tasks, all free, about 20 minutes total. Each one ends with a value to send back.
+Four short tasks, all free, about 25 minutes total. Each one ends with something to send back.
 
 ## Context
 
@@ -88,6 +88,28 @@ settings changed. Either invite us as a collaborator and we'll do it, or do it y
 
 ---
 
+---
+
+## Task 4 — A profile photo (required, ~2 min)
+
+The photo file in the project is corrupted — it was damaged before we received it, and no
+software can open it, so the site currently shows your initials in a styled placeholder instead
+of your portrait. It looks intentional rather than broken, but a real photo is much stronger.
+
+Please send a professional headshot:
+
+- **Format:** JPG or PNG
+- **Orientation:** portrait (taller than wide) — it sits in a tall frame
+- **Size:** at least 800 x 1000 pixels; larger is fine, we'll compress it
+- **Framing:** head and shoulders, centred, with your face in the upper half
+
+Send it as a **file attachment**, not pasted into the body of an email or a chat message —
+that is what corrupted the original.
+
+**Send back:** the image file.
+
+---
+
 ## Summary — what to send back
 
 | # | Item | Looks like |
@@ -96,6 +118,7 @@ settings changed. Either invite us as a collaborator and we'll do it, or do it y
 | 2 | Destination email for inquiries | `you@example.com` |
 | 3 | Analytics token **or** Measurement ID | `abc123...` / `G-XXXXXXXXXX` |
 | 4 | GitHub collaborator invite, or confirmation of the three settings | — |
+| 5 | Professional headshot | portrait JPG/PNG, sent as an attachment |
 
 ## Cost
 
