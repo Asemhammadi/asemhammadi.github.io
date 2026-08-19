@@ -23,17 +23,10 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - run: npm ci
-
-      # Creates the Pages site on first run if it does not exist yet, using this
-      # workflow's own token (permissions.pages: write below). Saves needing an
-      # admin to flip Settings -> Pages -> Source by hand.
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - run: npm run lint
 
@@ -43,6 +36,14 @@ jobs:
           VITE_WEB3FORMS_KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
           # Serves from https://<user>.github.io/<repo>/ — set to "/" for a custom domain.
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
+
+      # Kept last so lint and build always run first and report real failures.
+      # enablement only works once an admin has set Settings -> Pages -> Source
+      # to GitHub Actions; the workflow token cannot create the site itself
+      # ("Resource not accessible by integration"). Harmless no-op once it exists.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
