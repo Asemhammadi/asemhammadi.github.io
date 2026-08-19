@@ -28,6 +28,13 @@ jobs:
 
       - run: npm ci
 
+      # Creates the Pages site on first run if it does not exist yet, using this
+      # workflow's own token (permissions.pages: write below). Saves needing an
+      # admin to flip Settings -> Pages -> Source by hand.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - run: npm run lint
 
       - run: npm run build
