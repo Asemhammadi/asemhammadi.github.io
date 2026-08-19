@@ -1,14 +1,14 @@
 import { WorkExperience, EducationItem, CertificationItem, ServiceItem, ProjectItem, BlogPost, PublicationItem, LanguageItem } from '../types';
+import portrait from '../assets/asem-alhammadi.webp';
 
 export const PERSONAL_INFO = {
   fullName: "Asem Esmail Ghanem Al-Hammadi",
   name: "Asem Alhammadi",
   title: "Senior Systems Integrator & IT Project Manager",
   credentials: "M.Sc., PMP®",
-  // No photo yet — the hero shows a monogram plate while this is empty. To add one:
-  // drop the file in src/assets/, `import photo from '../assets/<file>'`, and set photoUrl: photo.
-  // Import it (don't hardcode "/file.png") so Vite rewrites the URL for the deployed base path.
-  photoUrl: "",
+  // Imported, not a hardcoded path, so Vite fingerprints it and resolves the
+  // deployed base path. Empty string here falls back to the monogram plate.
+  photoUrl: portrait,
   tagline: "Bridging Physical Security, IT Infrastructure & 24x7 Healthcare Operations",
   location: "Malden, MA 02148",
   phone: "781-426-7496",
