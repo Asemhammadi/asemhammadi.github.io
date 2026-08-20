@@ -140,18 +140,37 @@
 .hero-rise > *:nth-child(5) { animation-delay: 0.37s; }
 .hero-rise > *:nth-child(6) { animation-delay: 0.45s; }
 
-/* Skill meters fill from zero once their section is revealed. */
+/* Skill meters. He is a comms engineer by training, so these settle like an RF
+   spectrum analyser finding level — a fast rise, slight overshoot, then a couple
+   of damped swings — rather than gliding smoothly to a stop.
+
+   Driven by scaleX rather than width so nothing triggers layout, and the leading
+   edge carries a faint cap glow like an analyser peak marker. */
 .skill-meter {
-  width: 0 !important;
-  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  width: var(--level);
+  transform: scaleX(0);
+  transform-origin: left center;
+  box-shadow: 2px 0 6px -1px rgba(52, 211, 153, 0.55);
 }
+
+@keyframes meterSettle {
+  0%   { transform: scaleX(0); }
+  45%  { transform: scaleX(1.035); }
+  62%  { transform: scaleX(0.984); }
+  76%  { transform: scaleX(1.012); }
+  88%  { transform: scaleX(0.996); }
+  100% { transform: scaleX(1); }
+}
+
 [data-reveal].is-visible .skill-meter,
 [data-reveal-stagger].is-visible .skill-meter {
-  width: var(--level) !important;
+  animation: meterSettle 1.25s cubic-bezier(0.3, 0.9, 0.4, 1) both;
 }
+
+/* No JS: show them at level, no motion. */
 html:not(.reveal-ready) .skill-meter {
-  width: var(--level) !important;
-  transition: none;
+  transform: scaleX(1);
+  animation: none;
 }
 
 /* Reading progress rail pinned under the header. */
