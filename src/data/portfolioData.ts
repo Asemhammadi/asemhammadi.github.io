@@ -9,11 +9,11 @@ export const PERSONAL_INFO = {
   // Imported, not a hardcoded path, so Vite fingerprints it and resolves the
   // deployed base path. Empty string here falls back to the monogram plate.
   photoUrl: portrait,
-  tagline: "Bridging Physical Security, IT Infrastructure & 24x7 Healthcare Operations",
+  tagline: "Bridging Technology, Systems Integration & Mission-Critical Operations",
   location: "Malden, MA 02148",
   email: "asemalhamady92@yahoo.com",
   linkedin: "https://www.linkedin.com/in/asem-alhammadi",
-  summary: "IT Project Manager, Systems Integrator, and Academic Researcher with 15+ years of combined experience across hospital public safety systems, network infrastructure, IT support, university lecturing, and wireless communications research. M.Sc. graduate in Communication Engineering (Grade: 92.76%) and M.S. in CIS from Boston University. Experienced in managing complex IT projects, pfSense firewalls, Milestone VMS, Lenel OnGuard, and university IT labs.",
+  summary: "Senior Systems Integrator, IT Project Manager, and Technology Professional with 15+ years of experience spanning enterprise IT, systems integration, IT infrastructure, network engineering, technology operations, and academic research. M.Sc. graduate in Communication Engineering (Grade: 92.76%) and M.S. in Computer Information Systems from Boston University. Experienced in leading complex technology initiatives, integrating enterprise systems, managing IT infrastructure, and delivering solutions across diverse and mission-critical environments.",
   yearsExperience: "15+",
   projectsCompleted: "50+",
   facilitiesManaged: "3",
@@ -23,7 +23,7 @@ export const PERSONAL_INFO = {
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     id: "exp-1",
-    role: "Senior Systems Integrator - Public Safety Technology",
+    role: "Senior Systems Integrator - Public Safety Department",
     company: "Boston Medical Center",
     location: "Boston, MA",
     period: "May 2025 – Present",
@@ -37,11 +37,11 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       "Manage end-to-end project timelines, vendor coordination, and cross-campus security system harmonization.",
       "Oversaw technical documentation, staff training, and ensured regulatory compliance for all system deployments."
     ],
-    technologies: ["Milestone XProtect", "Lenel OnGuard", "CCURE", "Axis Cameras", "Active Directory", "TCP/IP", "MS Project"]
+    technologies: ["Systems Integration","Enterprise IT Infrastructure","Active Directory","TCP/IP Networking","Project Management", "Enterprise Systems","Technology Operations","Milestone XProtect","Lenel OnGuard"]
   },
   {
     id: "exp-2",
-    role: "Systems Integrator - Public Safety Technology",
+    role: "Systems Integrator - Public Safety Department",
     company: "Boston Medical Center",
     location: "Boston, MA",
     period: "July 2020 – April 2025",
@@ -55,11 +55,11 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       "Supported BMC Campus Redesign 2.0 security technology across active construction areas (Crosstown 7th Fl, 960 Mass Ave, Yawkey Fl 5 & 6, Menino Lobby).",
       "Tracked project risks, site issues, vendor actions, and remediation needs while delivering technical documentation and training materials."
     ],
-    technologies: ["Milestone XProtect", "Lenel", "CCURE", "Avigilon", "Hikvision", "Lorex", "Windows Server", "Trello"]
+    technologies: ["Systems Integration","IT Infrastructure","Enterprise Systems","Project Delivery","Windows Server","Network Infrastructure","Technical Documentation","Vendor Management","Milestone XProtect","Lenel","CCURE","Avigilon"]
   },
   {
     id: "exp-3",
-    role: "Network Administrator & IT Lead",
+    role: "Network Administrator",
     company: "International Modern Arabic School (IMAS)",
     location: "Selangor, Malaysia",
     period: "March 2017 – 2019",
@@ -170,7 +170,7 @@ export const PUBLICATIONS_DATA: PublicationItem[] = [
     journal: "Journal of Science and Technology",
     year: "2015",
     volumeInfo: "Vol. 20, No. 2",
-    url: "http://ust.edu/ojs/index.php/JST/article/view/940",
+    url: "https://journals.ust.edu/index.php/JST/article/view/940",
     abstractSnippet: "Evaluated Orthogonal Space-Time Block Codes (OSTBC) for LTE-Advanced MIMO wireless systems, analyzing Bit Error Rate (BER) performance across fading channels."
   },
   {
@@ -180,7 +180,7 @@ export const PUBLICATIONS_DATA: PublicationItem[] = [
     journal: "Journal of Science and Technology",
     year: "2014",
     volumeInfo: "Vol. 19, No. 1",
-    url: "http://ust.edu/ojs/index.php/JST/article/view/710/661",
+    url: "https://journals.ust.edu/index.php/JST/article/view/710",
     abstractSnippet: "Designed and implemented an automated microcontroller-based electrical control system for tunnel illumination and environmental safety monitoring."
   },
   {
@@ -195,8 +195,7 @@ export const PUBLICATIONS_DATA: PublicationItem[] = [
 
 export const LANGUAGES_DATA: LanguageItem[] = [
   { language: "Arabic", level: "Native / Mother Tongue", note: "Fluent written & spoken communication" },
-  { language: "English", level: "Advanced / Professional", note: "IELTS Overall Score 6.0 - Full professional proficiency" },
-  { language: "Malayu", level: "Beginner", note: "Basic conversational phrases" }
+  { language: "English", level: "Advanced / Professional", note: "IELTS Overall Score 6.0 - Full professional proficiency" }
 ];
 
 export const CERTIFICATIONS: CertificationItem[] = [
@@ -218,7 +217,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     id: "cert-3",
     name: "Google Project Management Professional",
     issuer: "Google",
-    status: "Completed",
+    status: "In Progress",
     iconName: "CheckCircle"
   },
   {
@@ -280,75 +279,119 @@ export const CERTIFICATIONS: CertificationItem[] = [
 ];
 
 export const SERVICES_DATA: ServiceItem[] = [
-  {
+{
     id: "service-1",
-    title: "Physical Security Systems Architecture",
-    subtitle: "Enterprise CCTV, Access Control & VMS Design",
-    description: "Designing end-to-end physical security environments for high-consequence facilities, healthcare systems, and campus environments. Integration of Milestone XProtect, Lenel OnGuard, CCURE, and IP surveillance cameras.",
+    title: "Enterprise Systems Integration",
+    subtitle: "Connecting Complex Technology, Infrastructure & Business Operations",
+    description:
+      "Designing and integrating enterprise technology solutions across IT infrastructure, networks, servers, applications, and specialized systems. Translating operational requirements into reliable, scalable technology solutions for complex environments.",
     deliverables: [
-      "CCTV & Access Control System Design & Blueprints",
-      "VMS Platform Architecture (Milestone, Avigilon)",
-      "Risk & Threat Assessment Reports",
-      "Vendor Hardware & Camera Placement Specifications"
-    ],
-    icon: "ShieldAlert",
-    technologies: ["Milestone XProtect", "Lenel OnGuard", "CCURE 9000", "Axis Communications", "Avigilon"]
-  },
-  {
-    id: "service-2",
-    title: "Systems Integration with IT Infrastructure",
-    subtitle: "Connecting Physical Security to Active Directory & Networks",
-    description: "Seamlessly bridging physical security hardware with core enterprise IT networks, server environments, Active Directory authentication, and TCP/IP infrastructure for optimal reliability.",
-    deliverables: [
-      "Active Directory & Identity Integration",
-      "Network Cabling & Bandwidth Planning for VMS",
-      "Server & Storage Redundancy Configuration",
-      "Cybersecurity Hardening for IP Cameras & Controllers"
+      "Enterprise Systems Integration Planning",
+      "Technology Architecture & Integration Design",
+      "Infrastructure & System Dependency Mapping",
+      "Deployment & Implementation Planning",
+      "System Migration & Upgrade Support"
     ],
     icon: "Cpu",
-    technologies: ["Windows Server", "Active Directory", "DNS/DHCP", "TCP/IP Networking", "AWS"]
+    technologies: [
+      "Enterprise Systems",
+      "Windows Server",
+      "Active Directory",
+      "TCP/IP Networking",
+      "AWS"
+    ]
   },
+
+  {
+    id: "service-2",
+    title: "IT Infrastructure & Technology Integration",
+    subtitle: "Networks, Servers, Cloud, Identity & Enterprise Infrastructure",
+    description:
+      "Connecting enterprise applications and technology platforms with the infrastructure required for reliable and secure operation, including networks, servers, identity services, storage, and cloud environments.",
+    deliverables: [
+      "Infrastructure Readiness Assessments",
+      "Network & Connectivity Planning",
+      "Server & Storage Architecture",
+      "Active Directory & Identity Integration",
+      "Infrastructure Deployment Coordination"
+    ],
+    icon: "Server",
+    technologies: [
+      "Windows Server",
+      "Active Directory",
+      "DNS/DHCP",
+      "TCP/IP Networking",
+      "AWS Cloud"
+    ]
+  },
+
   {
     id: "service-3",
-    title: "IT Project Management & Vendor Oversight",
-    subtitle: "PMP-Certified End-to-End Project Delivery",
-    description: "Managing technology deployment projects from initiation to operational handoff. Coordinating contractors, IT infrastructure teams, facilities staff, and executive leadership.",
+    title: "IT Project Management & Technology Delivery",
+    subtitle: "PMP-Certified Project Leadership from Planning Through Implementation",
+    description:
+      "Leading technology initiatives from planning and requirements through implementation, stakeholder coordination, risk management, vendor oversight, and operational handoff.",
     deliverables: [
-      "Project Schedules & Scope Management (MS Project, Monday)",
-      "Risk Tracking & Remediation Logs",
-      "Vendor Coordination & Installation QA",
-      "Stakeholder Progress Reporting & Budget Oversight"
+      "Project Scope, Schedule & Resource Planning",
+      "Risk & Issue Management",
+      "Vendor & Stakeholder Coordination",
+      "Implementation & Go-Live Management",
+      "Executive Progress Reporting"
     ],
     icon: "Briefcase",
-    technologies: ["MS Project", "Trello", "Monday.com", "Visio", "PMP Methodology"]
+    technologies: [
+      "MS Project",
+      "Trello",
+      "Monday.com",
+      "Visio",
+      "PMP Methodology"
+    ]
   },
+
   {
     id: "service-4",
-    title: "Construction & Site Readiness Support",
-    subtitle: "Facilities Renovation & Infrastructure Coordination",
-    description: "Ensuring site readiness for active construction and healthcare renovation projects. Coordinating network drops, power, device placement, commissioning issues, and turnover to operational teams.",
+    title: "Specialized Systems & Security Integration",
+    subtitle: "Enterprise Video, Access Control & Specialized Technology Integration",
+    description:
+      "Integrating specialized technology systems with enterprise IT infrastructure, including video management, access control, surveillance, identity services, and network environments. Bringing together specialized platforms and core IT infrastructure to support reliable operations.",
     deliverables: [
-      "Construction Site Readiness Checklists",
-      "Device Placement & Field Commissioning QA",
-      "As-Built Documentation & Systems Walkthroughs",
-      "Punch-List Resolution & Operational Handoff"
+      "Specialized Technology Architecture",
+      "VMS & Access Control Integration",
+      "Enterprise Network & Infrastructure Integration",
+      "System Migration & Upgrade Planning",
+      "Technical Risk & Readiness Assessments"
     ],
-    icon: "Building",
-    technologies: ["Visio", "Facilities Coordination", "Commissioning QA", "As-Built Mapping"]
+    icon: "ShieldCheck",
+    technologies: [
+      "Milestone XProtect",
+      "Lenel OnGuard",
+      "CCURE 9000",
+      "Avigilon",
+      "Axis Communications"
+    ]
   },
+
   {
     id: "service-5",
-    title: "Technical Documentation & Operational Training",
-    subtitle: "Knowledge Transfer & Standard Operating Procedures",
-    description: "Authoring comprehensive standard operating procedures (SOPs), support notes, and delivering hands-on training to Public Safety staff, security officers, and IT helpdesk teams.",
+    title: "Technical Documentation & Operational Readiness",
+    subtitle: "Documentation, Training, Knowledge Transfer & Technology Adoption",
+    description:
+      "Developing technical documentation, operational procedures, training materials, and support resources that help organizations successfully implement, adopt, and operate technology solutions.",
     deliverables: [
-      "System Standard Operating Procedures (SOPs)",
-      "End-User & Dispatcher Training Manuals",
-      "Level 1/2 Support Runbooks",
-      "Post-Go-Live Training Workshops"
+      "Technical Documentation & SOPs",
+      "System & Operational Runbooks",
+      "Training Materials & Knowledge Transfer",
+      "Support Documentation",
+      "Post-Implementation Operational Handoff"
     ],
     icon: "FileText",
-    technologies: ["Microsoft 365", "Visio", "Training Modules", "Runbook Development"]
+    technologies: [
+      "Microsoft 365",
+      "Visio",
+      "Technical Writing",
+      "Runbook Development",
+      "Training Programs"
+    ]
   }
 ];
 
