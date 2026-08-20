@@ -11,7 +11,6 @@ export const PERSONAL_INFO = {
   photoUrl: portrait,
   tagline: "Bridging Physical Security, IT Infrastructure & 24x7 Healthcare Operations",
   location: "Malden, MA 02148",
-  phone: "781-426-7496",
   email: "asemalhamady92@yahoo.com",
   linkedin: "https://www.linkedin.com/in/asem-alhammadi",
   summary: "IT Project Manager, Systems Integrator, and Academic Researcher with 15+ years of combined experience across hospital public safety systems, network infrastructure, IT support, university lecturing, and wireless communications research. M.Sc. graduate in Communication Engineering (Grade: 92.76%) and M.S. in CIS from Boston University. Experienced in managing complex IT projects, pfSense firewalls, Milestone VMS, Lenel OnGuard, and university IT labs.",
