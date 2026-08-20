@@ -34,8 +34,10 @@ jobs:
         env:
           # Repo secret. If unset, the contact form tells visitors to email directly.
           VITE_WEB3FORMS_KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
-          # Serves from https://<user>.github.io/<repo>/ — set to "/" for a custom domain.
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          # vite.config.ts derives the base path and canonical URL from these.
+          # A repo named <owner>.github.io serves from the domain root automatically.
+          VITE_OWNER: ${{ github.repository_owner }}
+          VITE_REPO_NAME: ${{ github.event.repository.name }}
 
       # Kept last so lint and build always run first and report real failures.
       # enablement only works once an admin has set Settings -> Pages -> Source

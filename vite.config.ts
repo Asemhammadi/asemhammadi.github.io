@@ -6,12 +6,16 @@ import { defineConfig, Plugin } from 'vite';
 // Single source of truth for where this site lives. A repo rename only needs a
 // change here (or the env vars the Pages workflow already supplies), instead of
 // hunting down absolute URLs scattered across index.html, robots.txt and sitemap.xml.
-const OWNER = process.env.VITE_OWNER || 'asemhammadi';
+const OWNER = (process.env.VITE_OWNER || 'asemhammadi').toLowerCase();
 const REPO = process.env.VITE_REPO_NAME || 'AsemAlhammadi';
 
-// GitHub Pages serves a project site from /<repo>/. A custom domain would set
-// VITE_BASE_PATH=/ and VITE_SITE_URL to the domain.
-const base = process.env.VITE_BASE_PATH || `/${REPO}/`;
+// A repo named exactly <owner>.github.io is a *user site*: it serves from the
+// domain root, not /<repo>/. Any other name is a project site. Detecting this
+// means renaming the repo is all it takes to move between them — no code change.
+const isUserSite = REPO.toLowerCase() === `${OWNER}.github.io`;
+
+// A custom domain would set VITE_BASE_PATH=/ and VITE_SITE_URL to the domain.
+const base = process.env.VITE_BASE_PATH || (isUserSite ? '/' : `/${REPO}/`);
 const siteUrl = (process.env.VITE_SITE_URL || `https://${OWNER}.github.io${base}`).replace(/\/+$/, '') + '/';
 
 // Injects the canonical origin into index.html and emits robots.txt + sitemap.xml
