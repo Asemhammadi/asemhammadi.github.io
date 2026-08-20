@@ -1,5 +1,6 @@
 import { Shield, Award, Building2, CheckCircle2, ArrowRight, Download, Mail, Linkedin } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
+import { CountUp } from './CountUp';
 
 interface HeroProps {
   onOpenResumeModal: () => void;
@@ -19,7 +20,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Main Hero Copy */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-6 hero-rise">
             
             {/* Status & Certification Pills */}
             <div className="flex flex-wrap items-center gap-2">
@@ -113,7 +114,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
           </div>
 
           {/* Right Visual Card & Quick Metrics */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative hero-rise">
             
             {/* Visual Profile Display Box */}
             <div id="hero-profile-panel" className="relative rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800/80 p-5 sm:p-6 shadow-2xl space-y-6">
@@ -161,27 +162,27 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
               </div>
 
               {/* Stat Counter Grid */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4" data-reveal data-reveal-stagger>
                 <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
-                  <div className="text-3xl font-extrabold text-emerald-400">{personalInfo.yearsExperience}</div>
+                  <div className="text-3xl font-extrabold text-emerald-400"><CountUp value={personalInfo.yearsExperience} /></div>
                   <div className="text-xs font-semibold text-slate-300 mt-0.5">Years Experience</div>
                   <div className="text-[10px] text-slate-400">Security, IT & Operations</div>
                 </div>
 
                 <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
-                  <div className="text-3xl font-extrabold text-teal-400">{personalInfo.facilitiesManaged}</div>
+                  <div className="text-3xl font-extrabold text-teal-400"><CountUp value={personalInfo.facilitiesManaged} /></div>
                   <div className="text-xs font-semibold text-slate-300 mt-0.5">Hospital Campuses</div>
                   <div className="text-[10px] text-slate-400">Boston Medical Center</div>
                 </div>
 
                 <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
-                  <div className="text-3xl font-extrabold text-cyan-400">{personalInfo.projectsCompleted}</div>
+                  <div className="text-3xl font-extrabold text-cyan-400"><CountUp value={personalInfo.projectsCompleted} /></div>
                   <div className="text-xs font-semibold text-slate-300 mt-0.5">Projects Delivered</div>
                   <div className="text-[10px] text-slate-400">Acquisitions & Renovations</div>
                 </div>
 
                 <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
-                  <div className="text-3xl font-extrabold text-emerald-400">{personalInfo.certificationsCount}</div>
+                  <div className="text-3xl font-extrabold text-emerald-400"><CountUp value={personalInfo.certificationsCount} /></div>
                   <div className="text-xs font-semibold text-slate-300 mt-0.5">Certifications</div>
                   <div className="text-[10px] text-slate-400">PMP, AWS, MS 365, Server</div>
                 </div>

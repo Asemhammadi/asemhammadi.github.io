@@ -16,7 +16,7 @@ export function CareerTimeline() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12" data-reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <Briefcase className="w-3.5 h-3.5" />
             <span>15+ Years Track Record</span>
@@ -206,7 +206,7 @@ export function CareerTimeline() {
                 <span>Degrees & Executive Leadership Training</span>
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-reveal data-reveal-stagger>
                 {educationData.map((edu) => (
                   <div key={edu.id} className="bg-slate-900/90 border border-slate-800 p-6 rounded-2xl space-y-3 hover:border-slate-700 transition-all flex flex-col justify-between">
                     <div className="space-y-3">

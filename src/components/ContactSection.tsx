@@ -85,7 +85,7 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="text-center max-w-3xl mx-auto space-y-3" data-reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <Mail className="w-3.5 h-3.5" />
             <span>Direct Line & Inquiry Form</span>
@@ -98,7 +98,7 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start" data-reveal data-reveal-stagger>
           
           {/* Direct Contact Cards */}
           <div className="lg:col-span-5 space-y-6">

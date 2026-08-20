@@ -35,7 +35,7 @@ export function BlogSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="text-center max-w-3xl mx-auto space-y-3" data-reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Technical Insights & Engineering SOPs</span>
@@ -85,7 +85,7 @@ export function BlogSection() {
         </div>
 
         {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-stagger>
           {filteredPosts.map((post) => (
             <div
               key={post.id}
@@ -166,7 +166,7 @@ export function BlogSection() {
             aria-modal="true"
             aria-labelledby="article-modal-title"
             onClick={(e) => e.stopPropagation()}
-            className="bg-slate-900 border border-slate-700 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+            className="modal-panel bg-slate-900 border border-slate-700 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
           >
 
             {/* Reader Header */}

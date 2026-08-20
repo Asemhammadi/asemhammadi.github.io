@@ -4,7 +4,6 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeaderProps {
   activeSection: string;
-  setActiveSection: (sec: string) => void;
   theme: 'dark' | 'light';
   onToggleTheme: () => void;
   onOpenResumeModal: () => void;
@@ -12,7 +11,6 @@ interface HeaderProps {
 
 export function Header({
   activeSection,
-  setActiveSection,
   theme,
   onToggleTheme,
   onOpenResumeModal
@@ -44,7 +42,6 @@ export function Header({
   ];
 
   const scrollToSection = (id: string) => {
-    setActiveSection(id);
     setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {

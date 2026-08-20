@@ -30,7 +30,7 @@ export function ServicesSection({ onSelectServiceForContact }: ServicesSectionPr
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16" data-reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <Cpu className="w-3.5 h-3.5" />
             <span>Core Expertise</span>
@@ -44,7 +44,7 @@ export function ServicesSection({ onSelectServiceForContact }: ServicesSectionPr
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-reveal data-reveal-stagger>
           {servicesData.map((service) => (
             <div
               key={service.id}

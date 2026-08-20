@@ -63,7 +63,7 @@ ${TECHNICAL_SKILLS.map(s => `${s.name}`).join(' | ')}
         aria-modal="true"
         aria-labelledby="resume-modal-title"
         onClick={(e) => e.stopPropagation()}
-        className="bg-slate-900 border border-slate-700 rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative print:border-none print:shadow-none print:max-h-none print:w-full"
+        className="modal-panel bg-slate-900 border border-slate-700 rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative print:border-none print:shadow-none print:max-h-none print:w-full"
       >
 
         {/* Header Controls */}

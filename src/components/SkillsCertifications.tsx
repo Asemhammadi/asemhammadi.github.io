@@ -25,7 +25,7 @@ export function SkillsCertifications() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="text-center max-w-3xl mx-auto space-y-3" data-reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <Award className="w-3.5 h-3.5" />
             <span>Verified Credentials, Research & Skills</span>
@@ -139,7 +139,7 @@ export function SkillsCertifications() {
             <span>Technical Tools & Systems Mastery</span>
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-reveal data-reveal-stagger>
             {categories.map((cat) => {
               const skillsInCat = skillsData.filter(s => s.category === cat);
               return (
@@ -156,8 +156,8 @@ export function SkillsCertifications() {
                         </div>
                         <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full transition-all duration-1000"
-                            style={{ width: `${skill.level}%` }}
+                            className="skill-meter h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full"
+                            style={{ ['--level' as string]: `${skill.level}%` } as React.CSSProperties}
                           />
                         </div>
                       </div>
