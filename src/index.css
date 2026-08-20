@@ -67,6 +67,27 @@
 .reveal-ready [data-reveal-stagger].is-visible > *:nth-child(6) { transition-delay: 350ms; }
 .reveal-ready [data-reveal-stagger].is-visible > *:nth-child(n + 7) { transition-delay: 400ms; }
 
+/* Ambient camera-wall backdrop. Deliberately faint: it should register as
+   texture, not as content competing with the headline. Masked so it fades out
+   behind the copy on the left and toward the bottom of the hero. */
+#command-wall {
+  opacity: 0.34;
+  -webkit-mask-image:
+    linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 62%, rgba(0,0,0,0) 100%),
+    radial-gradient(ellipse 48% 62% at 20% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,1) 82%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 62%, rgba(0,0,0,0) 100%),
+    radial-gradient(ellipse 48% 62% at 20% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,1) 82%);
+  mask-composite: intersect;
+}
+
+/* On the light ground the emerald reads much stronger, so pull it back. */
+.light-theme #command-wall {
+  opacity: 0.17;
+}
+
+
 /* Directional reveals. Placed after the base [data-reveal] rules so they win
    on source order — same specificity, later wins. */
 .reveal-ready [data-reveal][data-reveal-dir="left"] {

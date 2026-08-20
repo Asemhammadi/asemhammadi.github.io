@@ -1,6 +1,7 @@
 import { Shield, Award, Building2, CheckCircle2, ArrowRight, Download, Mail, Linkedin } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
 import { CountUp } from './CountUp';
+import { CommandWall } from './CommandWall';
 
 interface HeroProps {
   onOpenResumeModal: () => void;
@@ -13,6 +14,8 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
   return (
     <section id="hero" className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
       {/* Background Grid & Ambient Glows */}
+      <CommandWall />
+
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.15),rgba(255,255,255,0))] pointer-events-none" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-emerald-500/5 blur-3xl rounded-full pointer-events-none" />
 
