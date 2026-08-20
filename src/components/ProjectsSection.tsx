@@ -4,17 +4,30 @@ import { useSiteData } from '../context/SiteContext';
 import { ProjectItem } from '../types';
 import { useModalA11y } from '../hooks/useModalA11y';
 import { FocusReticle } from './FocusReticle';
+import { DeploymentMap } from './DeploymentMap';
+import { SITES, type Site } from '../lib/worldGrid';
 
 export function ProjectsSection() {
   const { projectsData } = useSiteData();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [activeSite, setActiveSite] = useState<string | null>(null);
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
 
   const categories = ['All', 'Hospital Systems', 'Physical Security', 'Network Infrastructure', 'Project Management'];
 
-  const filteredProjects = selectedCategory === 'All'
-    ? projectsData
-    : projectsData.filter(p => p.category === selectedCategory);
+  // A project belongs to a site when its client or period text names that place.
+  const matchesSite = (p: { clientOrOrg: string; title: string }, site: Site) =>
+    site.match.some(m =>
+      p.clientOrOrg.toLowerCase().includes(m.toLowerCase()) ||
+      p.title.toLowerCase().includes(m.toLowerCase())
+    );
+
+  const countFor = (site: Site) => projectsData.filter(p => matchesSite(p, site)).length;
+
+  const site = SITES.find(s => s.id === activeSite) ?? null;
+  const filteredProjects = projectsData
+    .filter(p => selectedCategory === 'All' || p.category === selectedCategory)
+    .filter(p => !site || matchesSite(p, site));
 
   const panelRef = useRef<HTMLDivElement>(null);
   const closeProjectModal = useCallback(() => setActiveModalProject(null), []);
@@ -41,6 +54,10 @@ export function ProjectsSection() {
           <p className="text-slate-400 text-sm sm:text-base">
             Real-world enterprise systems integration, hospital acquisitions, and physical security upgrades.
           </p>
+        </div>
+
+        <div className="mb-10">
+          <DeploymentMap activeSite={activeSite} onSelectSite={setActiveSite} countFor={countFor} />
         </div>
 
         {/* Category Filters */}
