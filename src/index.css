@@ -67,6 +67,43 @@
 .reveal-ready [data-reveal-stagger].is-visible > *:nth-child(6) { transition-delay: 350ms; }
 .reveal-ready [data-reveal-stagger].is-visible > *:nth-child(n + 7) { transition-delay: 400ms; }
 
+/* Directional reveals. Placed after the base [data-reveal] rules so they win
+   on source order — same specificity, later wins. */
+.reveal-ready [data-reveal][data-reveal-dir="left"] {
+  transform: translateX(-32px);
+}
+.reveal-ready [data-reveal][data-reveal-dir="right"] {
+  transform: translateX(32px);
+}
+.reveal-ready [data-reveal][data-reveal-dir="left"].is-visible,
+.reveal-ready [data-reveal][data-reveal-dir="right"].is-visible {
+  transform: none;
+}
+
+/* Alternating stagger: odd children enter from the left, even from the right,
+   which matches the two columns they occupy on wide screens. */
+.reveal-ready [data-reveal-stagger="alternate"] > *:nth-child(odd) {
+  transform: translateX(-28px);
+}
+.reveal-ready [data-reveal-stagger="alternate"] > *:nth-child(even) {
+  transform: translateX(28px);
+}
+.reveal-ready [data-reveal-stagger="alternate"].is-visible > * {
+  transform: none;
+}
+
+/* The career rail grows downward rather than fading up like everything else,
+   so it overrides the shared transform and keeps full opacity throughout. */
+.reveal-ready .timeline-rail[data-reveal] {
+  opacity: 1;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-ready .timeline-rail[data-reveal].is-visible {
+  transform: scaleY(1);
+}
+
 /* Hero entrance: a short staggered cascade on first paint. */
 @keyframes riseIn {
   from { opacity: 0; transform: translateY(16px); }

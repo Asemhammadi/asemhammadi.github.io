@@ -80,10 +80,19 @@ export function CareerTimeline() {
               </h3>
 
               <div className="relative border-l-2 border-slate-800 ml-4 pl-6 sm:ml-6 sm:pl-8 space-y-8">
+
+                {/* Emerald rail drawn over the static border, growing downward as the
+                    section comes into view. Decorative only. */}
+                <span
+                  aria-hidden="true"
+                  data-reveal
+                  className="timeline-rail absolute -left-[2px] top-0 w-[2px] h-full bg-gradient-to-b from-emerald-500 via-teal-500 to-transparent"
+                />
+
                 {workExperience.map((exp) => {
                   const isExpanded = expandedId === exp.id;
                   return (
-                    <div key={exp.id} className="relative group">
+                    <div key={exp.id} className="relative group" data-reveal data-reveal-dir="left">
                       
                       {/* Timeline Node Dot */}
                       <div className={`absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
@@ -206,7 +215,7 @@ export function CareerTimeline() {
                 <span>Degrees & Executive Leadership Training</span>
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-reveal data-reveal-stagger>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-reveal data-reveal-stagger="alternate">
                 {educationData.map((edu) => (
                   <div key={edu.id} className="bg-slate-900/90 border border-slate-800 p-6 rounded-2xl space-y-3 hover:border-slate-700 transition-all flex flex-col justify-between">
                     <div className="space-y-3">
