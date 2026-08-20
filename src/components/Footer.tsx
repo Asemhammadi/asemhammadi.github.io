@@ -13,9 +13,9 @@ export function Footer({ onOpenResumeModal }: FooterProps) {
   return (
     <footer className="bg-slate-950 border-t border-slate-900 text-slate-400 text-xs py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          
+
           {/* Brand & Summary */}
           <div className="md:col-span-5 space-y-3">
             <div className="flex items-center gap-3">
@@ -65,4 +65,41 @@ export function Footer({ onOpenResumeModal }: FooterProps) {
 
               
                 href="#contact"
-                className="w-full flex items-center
+                className="w-full flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors"
+              >
+                <Send className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Send a Message</span>
+              </a>
+
+              
+                href={PERSONAL_INFO.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors"
+              >
+                <Linkedin className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>LinkedIn Profile</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>© {new Date().getFullYear()} Asem Alhammadi, M.Sc., PMP. All rights reserved.</p>
+
+          <button
+            id="back-to-top-btn"
+            onClick={scrollToTop}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 transition-colors"
+          >
+            <span>Back to top</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+      </div>
+    </footer>
+  );
+}
