@@ -52,7 +52,7 @@ export function Footer({ onOpenResumeModal }: FooterProps) {
               Get In Touch
             </h4>
             <div className="space-y-2">
-              <button id="footer-resume-btn" onClick={onOpenResumeModal} className="w-full flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors">
+              <button id="footer-resume-btn" onClick={onOpenResumeModal} className="w-full flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white cursor-pointer transition-colors">
                 <span className="flex items-center gap-2">
                   <FileText className="w-4 h-4 text-emerald-400" />
                   <span>View Full Resume</span>
