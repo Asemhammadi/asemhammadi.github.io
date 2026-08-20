@@ -52,31 +52,19 @@ export function Footer({ onOpenResumeModal }: FooterProps) {
               Get In Touch
             </h4>
             <div className="space-y-2">
-              <button
-                id="footer-resume-btn"
-                onClick={onOpenResumeModal}
-                className="w-full flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors"
-              >
+              <button id="footer-resume-btn" onClick={onOpenResumeModal} className="w-full flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors">
                 <span className="flex items-center gap-2">
                   <FileText className="w-4 h-4 text-emerald-400" />
                   <span>View Full Resume</span>
                 </span>
               </button>
 
-              
-                href="#contact"
-                className="w-full flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors"
-              >
+              <a href="#contact" className="w-full flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors">
                 <Send className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Send a Message</span>
               </a>
 
-              
-                href={PERSONAL_INFO.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors"
-              >
+              <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="w-full flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors">
                 <Linkedin className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>LinkedIn Profile</span>
               </a>
@@ -89,11 +77,7 @@ export function Footer({ onOpenResumeModal }: FooterProps) {
         <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} Asem Alhammadi, M.Sc., PMP. All rights reserved.</p>
 
-          <button
-            id="back-to-top-btn"
-            onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 transition-colors"
-          >
+          <button id="back-to-top-btn" onClick={scrollToTop} className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 transition-colors">
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
