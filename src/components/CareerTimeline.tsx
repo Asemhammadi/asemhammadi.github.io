@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Briefcase, GraduationCap, Calendar, MapPin, CheckCircle2, ChevronDown, ChevronUp, Building, Award } from 'lucide-react';
+import { Briefcase, GraduationCap, Calendar, MapPin, CheckCircle2, ChevronDown, ChevronUp, Building, Award, GanttChartSquare, List } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
+import { CareerSchedule } from './CareerSchedule';
 
 export function CareerTimeline() {
   const { workExperience, educationData } = useSiteData();
   const [activeTab, setActiveTab] = useState<'all' | 'work' | 'education'>('all');
   const [expandedId, setExpandedId] = useState<string>('exp-1');
+  const [view, setView] = useState<'schedule' | 'list'>('schedule');
 
   const toggleExpand = (id: string) => {
     setExpandedId(prev => (prev === id ? '' : id));
@@ -27,6 +29,28 @@ export function CareerTimeline() {
           <p className="text-slate-400 text-sm sm:text-base">
             From university network technician to Senior Systems Integration Lead at Boston Medical Center.
           </p>
+        </div>
+
+        {/* View switch */}
+        <div className="flex justify-center mb-4">
+          <div className="inline-flex p-1 rounded-2xl bg-slate-900 border border-slate-800">
+            {([
+              { id: 'schedule', label: 'Schedule', Icon: GanttChartSquare },
+              { id: 'list', label: 'Detailed list', Icon: List }
+            ] as const).map(({ id, label, Icon }) => (
+              <button
+                key={id}
+                onClick={() => setView(id)}
+                aria-pressed={view === id}
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                  view === id ? 'bg-emerald-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5" />
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Tab Filters */}
@@ -68,8 +92,10 @@ export function CareerTimeline() {
           </div>
         </div>
 
+        {view === 'schedule' && <CareerSchedule filter={activeTab} />}
+
         {/* Timeline Stream */}
-        <div className="space-y-8">
+        <div className={`space-y-8 ${view === 'schedule' ? 'hidden' : ''}`}>
           
           {/* Work Experience Section */}
           {(activeTab === 'all' || activeTab === 'work') && (
