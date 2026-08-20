@@ -71,7 +71,7 @@ banner for EU/UK visitors. Extra work, and a banner on the landing page.
 
 ## Task 3 — GitHub access (required, ~5 min)
 
-The site lives at **github.com/Asemhammadi/my-website**, which you own. Deployment needs three
+The site lives at **github.com/Asemhammadi/AsemAlhammadi**, which you own. Deployment needs three
 settings changed. Either invite us as a collaborator and we'll do it, or do it yourself.
 
 **To invite us:** repo → **Settings → Collaborators → Add people** → grant **Write** access.
@@ -125,7 +125,7 @@ that is what corrupted the original.
 Everything above is free at this scale: GitHub Pages hosting, Web3Forms (250 submissions/month),
 Cloudflare Web Analytics (unlimited), Google Analytics (unlimited). The only optional paid item is
 a custom domain — roughly $10–15/year — if you would prefer `asemalhammadi.com` over
-`asemhammadi.github.io/my-website`. Worth considering for a portfolio recruiters will see.
+`asemhammadi.github.io/AsemAlhammadi`. Worth considering for a portfolio recruiters will see.
 
 ## If items are delayed
 

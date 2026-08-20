@@ -7,20 +7,21 @@
     <!--
       Social crawlers (LinkedIn, Slack, X, Facebook) do not run JavaScript, so every tag
       that matters for sharing lives here as static markup, not injected at runtime.
-      Moving to a custom domain? Update the four absolute URLs below.
+      __SITE_URL__ is injected at build time from vite.config.ts — change the origin there,
+      not here, so robots.txt and sitemap.xml stay in step.
     -->
     <title>Asem Alhammadi, M.Sc., PMP® — Senior Systems Integrator &amp; IT Project Manager</title>
     <meta
       name="description"
       content="Asem Alhammadi, M.Sc., PMP® — Senior Systems Integrator and IT Project Manager with 15+ years in physical security systems (Milestone XProtect, Lenel OnGuard, CCURE 9000), IT infrastructure, and 24x7 healthcare operations at Boston Medical Center."
     />
-    <link rel="canonical" href="https://asemhammadi.github.io/my-website/" />
+    <link rel="canonical" href="__SITE_URL__/" />
     <meta name="author" content="Asem Alhammadi" />
     <meta name="theme-color" content="#020617" />
 
-    <link rel="icon" href="/my-website/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="/my-website/favicon.ico" sizes="32x32" />
-    <link rel="apple-touch-icon" href="/my-website/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Open Graph (LinkedIn, Facebook, Slack) -->
     <meta property="og:type" content="profile" />
@@ -30,8 +31,8 @@
       property="og:description"
       content="15+ years leading physical security integration, IT infrastructure, and PMP® project delivery across 24x7 healthcare operations."
     />
-    <meta property="og:url" content="https://asemhammadi.github.io/my-website/" />
-    <meta property="og:image" content="https://asemhammadi.github.io/my-website/og-card.png" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/og-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Asem Alhammadi, M.Sc., PMP — Senior Systems Integrator and IT Project Manager" />
@@ -45,7 +46,7 @@
       name="twitter:description"
       content="15+ years leading physical security integration, IT infrastructure, and PMP® project delivery across 24x7 healthcare operations."
     />
-    <meta name="twitter:image" content="https://asemhammadi.github.io/my-website/og-card.png" />
+    <meta name="twitter:image" content="__SITE_URL__/og-card.png" />
 
     <script type="application/ld+json">
       {
@@ -54,8 +55,8 @@
         "name": "Asem Alhammadi",
         "honorificSuffix": "M.Sc., PMP®",
         "jobTitle": "Senior Systems Integrator & IT Project Manager",
-        "url": "https://asemhammadi.github.io/my-website/",
-        "image": "https://asemhammadi.github.io/my-website/og-card.png",
+        "url": "__SITE_URL__/",
+        "image": "__SITE_URL__/og-card.png",
         "email": "asemalhamady92@yahoo.com",
         "telephone": "+1-781-426-7496",
         "address": {
