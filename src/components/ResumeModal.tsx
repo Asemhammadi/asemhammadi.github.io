@@ -19,7 +19,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const handleCopyResumeText = () => {
     const text = `
 ASEM ALHAMMADI, M.Sc., PMP®
-${PERSONAL_INFO.location} | ${PERSONAL_INFO.phone} | ${PERSONAL_INFO.email} | ${PERSONAL_INFO.linkedin}
+${PERSONAL_INFO.location} | ${PERSONAL_INFO.email} | ${PERSONAL_INFO.linkedin}
 
 ${PERSONAL_INFO.title}
 ${PERSONAL_INFO.summary}
@@ -121,8 +121,6 @@ ${TECHNICAL_SKILLS.map(s => `${s.name}`).join(' | ')}
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-slate-400 print:text-gray-700 pt-1">
               <span>{PERSONAL_INFO.location}</span>
-              <span>•</span>
-              <span>{PERSONAL_INFO.phone}</span>
               <span>•</span>
               <span>{PERSONAL_INFO.email}</span>
               <span>•</span>
