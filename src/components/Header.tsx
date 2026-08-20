@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Shield, Phone, Mail, FileText, ChevronRight, Sun, Moon } from 'lucide-react';
+import { Menu, X, Shield, Mail, FileText, ChevronRight, Sun, Moon } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { useFeedSwitch } from '../hooks/useFeedSwitch';
 
@@ -188,11 +188,7 @@ export function Header({
             ))}
           </div>
 
-          <div className="pt-2 text-xs text-slate-400 flex items-center justify-between border-t border-slate-800/80">
-            <span className="flex items-center gap-1.5 text-slate-300">
-              <Phone className="w-3.5 h-3.5 text-emerald-400" />
-              {PERSONAL_INFO.phone}
-            </span>
+          <div className="pt-2 text-xs text-slate-400 flex items-center justify-center border-t border-slate-800/80">
             <span className="flex items-center gap-1.5 text-slate-300">
               <Mail className="w-3.5 h-3.5 text-emerald-400" />
               {PERSONAL_INFO.email}
