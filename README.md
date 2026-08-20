@@ -27,8 +27,9 @@ Both values are injected at build time — see [.env.example](.env.example).
 | `VITE_WEB3FORMS_KEY` | Web3Forms access key for the contact form. Stored as a GitHub repo secret of the same name. Without it, the form tells visitors to email directly instead of failing silently. |
 | `VITE_BASE_PATH` | URL prefix for built assets. The deploy workflow sets this to `/<repo-name>/`. Set to `/` if you move to a custom domain. |
 
-Analytics is a commented-out snippet in [index.html](index.html) — uncomment either the Cloudflare
-Web Analytics or the Google Analytics 4 block and paste in the ID.
+Analytics runs on Cloudflare Web Analytics, wired in [index.html](index.html). The beacon token is
+public by design and cookieless, so the site needs no consent banner. Figures are in the Cloudflare
+dashboard, not on the site.
 
 Setup instructions for the site owner (how to obtain the Web3Forms key and the analytics ID) live
 in [docs/OWNER-SETUP.md](docs/OWNER-SETUP.md).

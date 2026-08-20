@@ -15,7 +15,15 @@ The website is moving to GitHub Pages (free hosting, no monthly cost). Three thi
 
 ---
 
-## Task 1 — Web3Forms access key (required, ~5 min)
+## Task 1 — Web3Forms access key ⏳ KEY RECEIVED, AWAITING SECRET
+
+The key has been issued. The last step is adding it as a repository secret, which needs owner
+access: **Settings → Secrets and variables → Actions → New repository secret**, named exactly
+`VITE_WEB3FORMS_KEY`. Until then the form tells visitors to email directly.
+
+<details>
+<summary>Original instructions (kept for reference)</summary>
+
 
 Powers the "Send a Direct Message" form. Free plan covers 250 submissions/month.
 
@@ -34,7 +42,19 @@ Powers the "Send a Direct Message" form. Free plan covers 250 submissions/month.
 
 ---
 
-## Task 2 — Analytics (required, pick one, ~5–10 min)
+</details>
+
+---
+
+## Task 2 — Analytics ✅ DONE (Cloudflare Web Analytics)
+
+Token received and wired in. Cookieless, so no consent banner is needed. View figures at
+dash.cloudflare.com.
+
+<details>
+<summary>Original instructions (kept for reference)</summary>
+
+### Choosing (already decided: Cloudflare)
 
 Choose **A** or **B**, not both.
 
@@ -66,6 +86,10 @@ banner for EU/UK visitors. Extra work, and a banner on the landing page.
 7. The **Measurement ID** appears in the stream details — format `G-XXXXXXXXXX`
 
 **Send back:** the Measurement ID.
+
+---
+
+</details>
 
 ---
 

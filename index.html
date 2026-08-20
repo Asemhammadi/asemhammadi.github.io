@@ -88,29 +88,15 @@
     </script>
 
     <!--
-      ANALYTICS — uncomment ONE block below once the site owner sends the ID.
-      See docs/OWNER-SETUP.md for how to obtain it.
+      Cloudflare Web Analytics. Cookieless, so the site needs no consent banner.
+      The token is public by design — it ships in this tag on every page view.
+      Stats live at dash.cloudflare.com, not on the site itself.
     -->
-
-    <!-- OPTION A: Cloudflare Web Analytics (cookieless, no consent banner needed)
-         Replace YOUR_CLOUDFLARE_TOKEN with the token from the Cloudflare dashboard.
     <script
-      defer
+      type="module"
       src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "YOUR_CLOUDFLARE_TOKEN"}'
+      data-cf-beacon='{"token": "574703138d634bfbbf4eaf2a460d06cd"}'
     ></script>
-    -->
-
-    <!-- OPTION B: Google Analytics 4 (richer reports; needs a cookie consent banner for EU/UK visitors)
-         Replace G-XXXXXXXXXX in BOTH places with the Measurement ID.
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    -->
   </head>
   <body>
     <div id="root"></div>
