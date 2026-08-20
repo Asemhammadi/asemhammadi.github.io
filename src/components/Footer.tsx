@@ -1,4 +1,4 @@
-import { Shield, ArrowUp, Mail, Phone, Linkedin, FileText } from 'lucide-react';
+import { Shield, ArrowUp, Send, Linkedin, FileText } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface FooterProps {
@@ -63,51 +63,6 @@ export function Footer({ onOpenResumeModal }: FooterProps) {
                 </span>
               </button>
 
-              <a
-                href={`mailto:${PERSONAL_INFO.email}`}
-                className="w-full flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors"
-              >
-                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="truncate">{PERSONAL_INFO.email}</span>
-              </a>
-
-              <a
-                href={`tel:${PERSONAL_INFO.phone.replace(/[^0-9+]/g, '')}`}
-                className="w-full flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors"
-              >
-                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>{PERSONAL_INFO.phone}</span>
-              </a>
-
-              <a
-                href={PERSONAL_INFO.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors"
-              >
-                <Linkedin className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>LinkedIn Profile</span>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Asem Alhammadi, M.Sc., PMP. All rights reserved.</p>
-          
-          <button
-            id="back-to-top-btn"
-            onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 transition-colors"
-          >
-            <span>Back to top</span>
-            <ArrowUp className="w-3.5 h-3.5" />
-          </button>
-        </div>
-
-      </div>
-    </footer>
-  );
-}
+              
+                href="#contact"
+                className="w-full flex items-center
