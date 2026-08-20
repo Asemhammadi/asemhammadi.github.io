@@ -35,7 +35,7 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
     if (!WEB3FORMS_KEY) {
       setStatus('error');
       setResponseMsg(
-        `This form is not configured yet. Please email ${personalInfo.email} or call ${personalInfo.phone} directly.`
+        `This form is not configured yet. Please email ${personalInfo.email} directly.`
       );
       return;
     }
@@ -76,7 +76,7 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
       }
     } catch (err) {
       setStatus('error');
-      setResponseMsg('A network error occurred. Please try contacting Asem directly via email or phone.');
+      setResponseMsg('A network error occurred. Please try contacting Asem directly via email.');
     }
   };
 
