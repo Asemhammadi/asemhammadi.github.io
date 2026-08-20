@@ -31,7 +31,6 @@ export interface PersonalInfoType {
   photoUrl?: string;
   tagline: string;
   location: string;
-  phone: string;
   email: string;
   linkedin: string;
   summary: string;
