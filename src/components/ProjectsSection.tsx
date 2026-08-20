@@ -3,6 +3,7 @@ import { Shield, Building2, Cpu, CheckCircle2, ArrowRight, X, Sparkles, External
 import { useSiteData } from '../context/SiteContext';
 import { ProjectItem } from '../types';
 import { useModalA11y } from '../hooks/useModalA11y';
+import { FocusReticle } from './FocusReticle';
 
 export function ProjectsSection() {
   const { projectsData } = useSiteData();
@@ -65,8 +66,10 @@ export function ProjectsSection() {
           {filteredProjects.map((proj) => (
             <div
               key={proj.id}
-              className="bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 group"
+              className="relative bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 group"
             >
+              <FocusReticle />
+
               {/* Top Banner & Header */}
               <div className="p-6 space-y-4">
                 

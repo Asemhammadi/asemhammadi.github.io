@@ -167,6 +167,71 @@ html:not(.reveal-ready) .skill-meter {
   pointer-events: none;
 }
 
+/* Camera focus brackets on project cards — the hero's video-wall grammar,
+   reused so the page reads as one system. */
+.reticle {
+  position: absolute;
+  inset: 10px;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.group:hover .reticle,
+.group:focus-within .reticle {
+  opacity: 1;
+}
+
+.reticle-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #34d399;
+  border-style: solid;
+  border-width: 0;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reticle-tl { top: 0; left: 0; border-top-width: 2px; border-left-width: 2px; transform: translate(6px, 6px); }
+.reticle-tr { top: 0; right: 0; border-top-width: 2px; border-right-width: 2px; transform: translate(-6px, 6px); }
+.reticle-bl { bottom: 0; left: 0; border-bottom-width: 2px; border-left-width: 2px; transform: translate(6px, -6px); }
+.reticle-br { bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px; transform: translate(-6px, -6px); }
+
+/* Brackets snap outward to the card edges on hover. */
+.group:hover .reticle-corner,
+.group:focus-within .reticle-corner {
+  transform: translate(0, 0);
+}
+
+.reticle-rec {
+  position: absolute;
+  right: 2px;
+  bottom: -2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #34d399;
+}
+.reticle-rec::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #34d399;
+  animation: recBlink 1.4s ease-in-out infinite;
+}
+@keyframes recBlink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+.light-theme .reticle-corner { border-color: #047857; }
+.light-theme .reticle-rec { color: #047857; }
+.light-theme .reticle-rec::before { background: #047857; }
+
 /* Cards lift slightly toward the pointer. Transform only — no layout cost. */
 .lift {
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
