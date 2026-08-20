@@ -1,5 +1,6 @@
 import { Award, Shield, CheckCircle2, Cloud, Server, Lock, Terminal, Zap, Trophy, Cpu, Wrench, BookOpen, Globe, ExternalLink } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
+import { PropagationField } from './PropagationField';
 
 export function SkillsCertifications() {
   const { certificationsData, skillsData, publicationsData, awardsData, languagesData } = useSiteData();
@@ -21,8 +22,10 @@ export function SkillsCertifications() {
   const categories = ['Public Safety Systems', 'Project & Governance', 'IT & Networking', 'Engineering & Research'];
 
   return (
-    <section id="skills" className="py-20 bg-slate-900/60 relative border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="skills" className="py-20 bg-slate-900/60 relative border-t border-slate-800 overflow-hidden">
+      <PropagationField />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3" data-reveal>

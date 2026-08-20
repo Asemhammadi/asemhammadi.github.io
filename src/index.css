@@ -88,6 +88,18 @@
 }
 
 
+/* Wavefront lattice behind the credentials and research section. Faded toward
+   the centre so the published work stays the focus. */
+#propagation-field {
+  opacity: 0.44;
+  -webkit-mask-image: radial-gradient(ellipse 70% 62% at 50% 50%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,1) 100%);
+  mask-image: radial-gradient(ellipse 70% 62% at 50% 50%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,1) 100%);
+}
+
+.light-theme #propagation-field {
+  opacity: 0.22;
+}
+
 /* Directional reveals. Placed after the base [data-reveal] rules so they win
    on source order — same specificity, later wins. */
 .reveal-ready [data-reveal][data-reveal-dir="left"] {
