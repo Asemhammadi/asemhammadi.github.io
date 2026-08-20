@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Shield, Phone, Mail, FileText, ChevronRight, Sun, Moon } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { useFeedSwitch } from '../hooks/useFeedSwitch';
 
 interface HeaderProps {
   activeSection: string;
@@ -41,7 +42,10 @@ export function Header({
     { id: 'contact', label: 'Contact', longLabel: 'Contact' },
   ];
 
+  const feedSwitch = useFeedSwitch();
+
   const scrollToSection = (id: string) => {
+    feedSwitch();
     setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {

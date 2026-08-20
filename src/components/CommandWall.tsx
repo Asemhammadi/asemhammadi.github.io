@@ -46,6 +46,8 @@ export function CommandWall() {
     let raf = 0;
     let last = 0;
     let visible = true;
+    // Pointer position in canvas space; -1 means the cursor is elsewhere.
+    let px = -1, py = -1;
 
     const rand = (a: number, b: number) => a + Math.random() * (b - a);
 
@@ -143,6 +145,21 @@ export function CommandWall() {
         ctx.rect(x, y, tw2, th2);
         ctx.clip();
 
+        // Panes near the cursor lift, so the wall reads as watched rather than looped.
+        if (px >= 0) {
+          const cx = t.x + t.w / 2, cy = t.y + t.h / 2;
+          const d = Math.hypot(px - cx, py - cy);
+          const reach = 260;
+          if (d < reach) {
+            const near = (1 - d / reach) ** 2;
+            ctx.fillStyle = `rgba(${LINE}, ${0.10 * near})`;
+            ctx.fillRect(x, y, tw2, th2);
+            ctx.strokeStyle = `rgba(${LINE}, ${0.5 * near})`;
+            ctx.lineWidth = 1;
+            ctx.strokeRect(x + 0.5, y + 0.5, tw2 - 1, th2 - 1);
+          }
+        }
+
         // brief brightness bump — reads as the pane switching feed
         if (t.flash > 0) {
           ctx.fillStyle = `rgba(${LINE}, ${0.05 * t.flash})`;
@@ -210,6 +227,15 @@ export function CommandWall() {
 
     const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { threshold: 0 });
     io.observe(host);
+
+    const onMove = (e: PointerEvent) => {
+      const r = host.getBoundingClientRect();
+      px = e.clientX - r.left;
+      py = e.clientY - r.top;
+    };
+    const onLeave = () => { px = -1; py = -1; };
+    window.addEventListener('pointermove', onMove, { passive: true });
+    window.addEventListener('pointerleave', onLeave);
     const onVis = () => { visible = !document.hidden; };
     document.addEventListener('visibilitychange', onVis);
 
@@ -226,6 +252,8 @@ export function CommandWall() {
       ro.disconnect();
       window.clearTimeout(resizeTimer);
       document.removeEventListener('visibilitychange', onVis);
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerleave', onLeave);
     };
   }, []);
 
