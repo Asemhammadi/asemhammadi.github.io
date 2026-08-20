@@ -15,11 +15,15 @@ The website is moving to GitHub Pages (free hosting, no monthly cost). Three thi
 
 ---
 
-## Task 1 — Web3Forms access key ⏳ KEY RECEIVED, AWAITING SECRET
+## Task 1 — Web3Forms access key ✅ DONE
 
-The key has been issued. The last step is adding it as a repository secret, which needs owner
-access: **Settings → Secrets and variables → Actions → New repository secret**, named exactly
-`VITE_WEB3FORMS_KEY`. Until then the form tells visitors to email directly.
+Key issued and stored as the `VITE_WEB3FORMS_KEY` repository secret. The contact form is live and
+delivering to the registered address.
+
+**One thing still worth doing:** in the Web3Forms dashboard, restrict the key to the hostname
+`asemhammadi.github.io`. The key is visible in the site's JavaScript by design — that is how every
+static form service works, and it only permits sending mail to your own address. Locking it to the
+domain makes a copied key useless anywhere else.
 
 <details>
 <summary>Original instructions (kept for reference)</summary>
