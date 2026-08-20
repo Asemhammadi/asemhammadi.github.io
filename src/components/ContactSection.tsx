@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle2, AlertCircle, FileText, Download } from 'lucide-react';
+import { Mail, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useSiteData } from '../context/SiteContext';
 
 interface ContactSectionProps {
@@ -83,7 +83,7 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
   return (
     <section id="contact" className="py-20 bg-slate-900/60 relative border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        
+
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3" data-reveal>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
@@ -98,87 +98,9 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start" data-reveal data-reveal-stagger>
-          
-          {/* Direct Contact Cards */}
-          <div className="lg:col-span-5 space-y-6">
-            
-            <div className="bg-slate-900 border border-slate-800 p-6 rounded-3xl space-y-6">
-              <h3 className="text-xl font-bold text-white border-b border-slate-800 pb-3">
-                Contact Details
-              </h3>
-
-              <div className="space-y-4 text-sm">
-                
-                <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
-                  <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 shrink-0">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold text-slate-400">Phone & Mobile</span>
-                    <p className="text-white font-semibold">{personalInfo.phone}</p>
-                    <p className="text-xs text-slate-400">617-413-6807 (Alt)</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
-                  <div className="p-2.5 rounded-xl bg-teal-500/10 text-teal-400 shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold text-slate-400">Email Address</span>
-                    <p className="text-white font-semibold">{personalInfo.email}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
-                  <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold text-slate-400">Location</span>
-                    <p className="text-white font-semibold">{personalInfo.location}</p>
-                    <p className="text-xs text-slate-400">Greater Boston Area, MA</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
-                  <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 shrink-0">
-                    <Linkedin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold text-slate-400">LinkedIn Profile</span>
-                    <a
-                      href={personalInfo.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-emerald-400 hover:underline font-semibold block"
-                    >
-                      {personalInfo.linkedin}
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Resume Trigger Card */}
-              <div className="pt-2">
-                <button
-                  id="contact-section-resume-btn"
-                  onClick={onOpenResumeModal}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-emerald-500/20"
-                >
-                  <FileText className="w-4 h-4" />
-                  <span>View Full Printable Resume</span>
-                </button>
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* Interactive Form */}
-          <div className="lg:col-span-7 bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-6">
+        {/* Interactive Form — now centered as a single column */}
+        <div className="max-w-2xl mx-auto" data-reveal data-reveal-stagger>
+          <div className="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-6">
             <h3 className="text-xl font-bold text-white border-b border-slate-800 pb-3">
               Send a Direct Message
             </h3>
@@ -304,9 +226,7 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
 
               </form>
             )}
-
           </div>
-
         </div>
 
       </div>
