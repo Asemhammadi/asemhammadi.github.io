@@ -29,7 +29,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                Available for Senior Integration & PM Leadership
+                Open to IT Management & Strategic Leadership Roles
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-medium">
                 <Award className="w-3.5 h-3.5 text-emerald-400" />
@@ -37,7 +37,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-medium">
                 <Building2 className="w-3.5 h-3.5 text-teal-400" />
-                Boston Medical Center Lead
+                Multi-Industry IT Experience
               </span>
             </div>
 
@@ -169,28 +169,27 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
                 <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
                   <div className="text-3xl font-extrabold text-emerald-400"><CountUp value={personalInfo.yearsExperience} /></div>
                   <div className="text-xs font-semibold text-slate-300 mt-0.5">Years Experience</div>
-                  <div className="text-[10px] text-slate-400">Security, IT & Operations</div>
+                  <div className="text-[10px] text-slate-400">IT, Networking & Systems Integration</div>
                 </div>
 
                 <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
                   <div className="text-3xl font-extrabold text-teal-400"><CountUp value={personalInfo.facilitiesManaged} /></div>
-                  <div className="text-xs font-semibold text-slate-300 mt-0.5">Hospital Campuses</div>
-                  <div className="text-[10px] text-slate-400">Boston Medical Center</div>
+                  <div className="text-xs font-semibold text-slate-300 mt-0.5">Organizations Served</div>
+                  <div className="text-[10px] text-slate-400">Healthcare, Education & Enterprise IT</div>
                 </div>
 
                 <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
                   <div className="text-3xl font-extrabold text-cyan-400"><CountUp value={personalInfo.projectsCompleted} /></div>
                   <div className="text-xs font-semibold text-slate-300 mt-0.5">Projects Delivered</div>
-                  <div className="text-[10px] text-slate-400">Acquisitions & Renovations</div>
+                  <div className="text-[10px] text-slate-400">Enterprise & Healthcare Systems</div>
                 </div>
 
                 <div className="bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
                   <div className="text-3xl font-extrabold text-emerald-400"><CountUp value={personalInfo.certificationsCount} /></div>
                   <div className="text-xs font-semibold text-slate-300 mt-0.5">Certifications</div>
-                  <div className="text-[10px] text-slate-400">PMP, AWS, MS 365, Server</div>
+                  <div className="text-[10px] text-slate-400">PMP, Microsoft, Cisco & More</div>
                 </div>
               </div>
-
               {/* Highlight Banner */}
               <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-4 flex items-center gap-3">
                 <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0">
