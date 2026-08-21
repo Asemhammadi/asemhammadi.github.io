@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
   location: "Malden, MA 02148",
   email: "asemalhamady92@yahoo.com",
   linkedin: "https://www.linkedin.com/in/asem-alhammadi",
-  summary: "Senior Systems Integrator, IT Project Manager, and Technology Professional with 15+ years of experience spanning enterprise IT, systems integration, IT infrastructure, network engineering, technology operations, and academic research. M.Sc. graduate in Communication Engineering (Grade: 92.76%) and M.S. in Computer Information Systems from Boston University. Experienced in leading complex technology initiatives, integrating enterprise systems, managing IT infrastructure, and delivering solutions across diverse and mission-critical environments.",
+  summary: "Senior IT Professional and Systems Integrator with 15+ years of experience across enterprise IT infrastructure, network engineering, cloud architecture, and project management — including physical security systems integration within large-scale, mission-critical environments. Background spans network design and administration, systems architecture, IT operations, and technical training, with a track record of leading cross-functional technology initiatives from planning through delivery. PMP® certified, with M.Sc. in Communication Engineering and M.S. in Computer Information Systems (Boston University).",
   yearsExperience: "15+",
   projectsCompleted: "50+",
   facilitiesManaged: "3",
