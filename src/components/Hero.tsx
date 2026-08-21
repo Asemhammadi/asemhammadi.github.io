@@ -61,7 +61,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
               {[
                 'Enterprise IT Infrastructure',
                 'Network Engineering & Security',
-                'Cloud Architecture (AWS)',
+                'Cloud Architecture',
                 'IT Project Management',
                 'Systems Integration',
                 'Physical Security Systems'
