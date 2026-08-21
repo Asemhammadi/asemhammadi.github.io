@@ -4,7 +4,7 @@ import portrait from '../assets/asem-alhammadi.webp';
 export const PERSONAL_INFO = {
   fullName: "Asem Esmail Ghanem Al-Hammadi",
   name: "Asem Alhammadi",
-  title: "Senior Systems Integrator & IT Project Manager",
+  title: "Senior IT Leader & Systems Integration Executive",
   credentials: "M.Sc., PMP®",
   // Imported, not a hardcoded path, so Vite fingerprints it and resolves the
   // deployed base path. Empty string here falls back to the monogram plate.
