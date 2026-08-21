@@ -23,7 +23,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Main Hero Copy */}
-          <div className="lg:col-span-7 space-y-6 hero-rise">
+          <div className="lg:col-span-7 space-y-6 hero-rise order-2 lg:order-1">
             
             {/* Status & Certification Pills */}
             <div className="flex flex-wrap items-center gap-2">
@@ -117,7 +117,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
           </div>
 
           {/* Right Visual Card & Quick Metrics */}
-          <div className="lg:col-span-5 relative hero-rise">
+          <div className="lg:col-span-5 relative hero-rise order-1 lg:order-2">
             
             {/* Visual Profile Display Box */}
             <div id="hero-profile-panel" className="relative rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800/80 p-5 sm:p-6 shadow-2xl space-y-6">
