@@ -150,7 +150,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
                 {/* Top Badge Overlay */}
                 <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-emerald-500/40 text-emerald-300 text-xs font-semibold flex items-center gap-1.5 shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>PMP® Lead</span>
+                  <span>Senior IT Leader</span>
                 </div>
 
                 {/* Bottom Info Gradient Overlay */}
