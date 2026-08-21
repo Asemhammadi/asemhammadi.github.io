@@ -16,7 +16,7 @@ export const PERSONAL_INFO = {
   summary: "Senior IT Professional and Systems Integrator with 15+ years of experience across enterprise IT infrastructure, network engineering, cloud architecture, and project management — including physical security systems integration within large-scale, mission-critical environments. Background spans network design and administration, systems architecture, IT operations, and technical training, with a track record of leading cross-functional technology initiatives from planning through delivery. PMP® certified, with M.Sc. in Communication Engineering and M.S. in Computer Information Systems (Boston University).",
   yearsExperience: "15+",
   projectsCompleted: "50+",
-  facilitiesManaged: "3",
+  facilitiesManaged: "5+",
   certificationsCount: "10+"
 };
 
