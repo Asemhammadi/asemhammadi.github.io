@@ -29,7 +29,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                Open to IT Management & Strategic Leadership Roles
+                Open to Senior IT Leadership Roles
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-medium">
                 <Award className="w-3.5 h-3.5 text-emerald-400" />
