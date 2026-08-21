@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Shield, Mail, FileText, ChevronRight, Sun, Moon } from 'lucide-react';
+import { Menu, X, Cpu, Mail, FileText, ChevronRight, Sun, Moon } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { useFeedSwitch } from '../hooks/useFeedSwitch';
 
@@ -71,7 +71,7 @@ export function Header({
             className="flex items-center gap-3 text-left group focus:outline-none"
           >
             <div className="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-slate-950 font-bold shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-              <Shield className="w-5 h-5 text-slate-950" />
+              <Cpu className="w-5 h-5 text-slate-950" />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
@@ -83,7 +83,7 @@ export function Header({
                 </span>
               </div>
               <p className="text-xs text-slate-400 hidden sm:block whitespace-nowrap">
-                Systems Integration Lead & PMP®
+                Senior IT Leader & PMP®
               </p>
             </div>
           </button>
