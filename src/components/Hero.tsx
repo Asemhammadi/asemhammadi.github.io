@@ -57,14 +57,14 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
             </p>
 
             {/* Key Strengths Grid Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
               {[
-                'Physical Security Architecture',
-                'Milestone XProtect & Lenel',
-                'Construction Site Readiness',
-                '24x7 Healthcare Operations',
-                'PMP® Project Delivery',
-                'Active Directory & Networks'
+                'Enterprise IT Infrastructure',
+                'Network Engineering & Security',
+                'Cloud Architecture (AWS)',
+                'IT Project Management',
+                'Systems Integration',
+                'Physical Security Systems'
               ].map((strength, i) => (
                 <div key={i} className="flex items-start gap-2 text-xs text-slate-300 bg-slate-900/80 border border-slate-800/80 px-3 py-2 rounded-xl">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
