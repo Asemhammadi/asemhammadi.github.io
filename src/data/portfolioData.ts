@@ -506,7 +506,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     featured: true,
     imageSeed: "access-control"
   },
-
+];
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: "post-1",
