@@ -273,29 +273,6 @@ export const CERTIFICATIONS: CertificationItem[] = [
 
 export const SERVICES_DATA: ServiceItem[] = [
 {
-    id: "service-1",
-    title: "Enterprise Systems Integration",
-    subtitle: "Connecting Complex Technology, Infrastructure & Business Operations",
-    description:
-      "Designing and integrating enterprise technology solutions across IT infrastructure, networks, servers, applications, and specialized systems. Translating operational requirements into reliable, scalable technology solutions for complex environments.",
-    deliverables: [
-      "Enterprise Systems Integration Planning",
-      "Technology Architecture & Integration Design",
-      "Infrastructure & System Dependency Mapping",
-      "Deployment & Implementation Planning",
-      "System Migration & Upgrade Support"
-    ],
-    icon: "Cpu",
-    technologies: [
-      "Enterprise Systems",
-      "Windows Server",
-      "Active Directory",
-      "TCP/IP Networking",
-      "AWS"
-    ]
-  },
-
-  {
   id: "service-1",
   title: "Security Systems",
   subtitle: "Design, Integration, Installation & Support",
