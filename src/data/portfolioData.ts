@@ -134,8 +134,8 @@ export const EDUCATION_DATA: EducationItem[] = [
   },
   {
     id: "edu-2",
-    degree: "M.Sc. in Communication Engineering",
-    field: "Signal Processing & Wireless Communications",
+    degree: "M.Sc. in Electronics Engineering",
+    field: "Communications Engineering Specialization",
     institution: "University of Science and Technology (UST), Faculty of Engineering",
     year: "2012 – 2015",
     grade: "92.76% (High Distinction)",
@@ -144,8 +144,8 @@ export const EDUCATION_DATA: EducationItem[] = [
   },
   {
     id: "edu-3",
-    degree: "B.Sc. in Communication Engineering",
-    field: "Electronics & Telecommunications Engineering",
+    degree: "B.Sc. in Electronics Engineering",
+    field: "Communications Engineering Specialization",
     institution: "University of Science and Technology (UST), Faculty of Science & Engineering",
     year: "2004 – 2008",
     grade: "84.46% (Very Good)",
@@ -296,96 +296,120 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
 
   {
-    id: "service-2",
-    title: "IT Infrastructure & Technology Integration",
-    subtitle: "Networks, Servers, Cloud, Identity & Enterprise Infrastructure",
-    description:
-      "Connecting enterprise applications and technology platforms with the infrastructure required for reliable and secure operation, including networks, servers, identity services, storage, and cloud environments.",
-    deliverables: [
-      "Infrastructure Readiness Assessments",
-      "Network & Connectivity Planning",
-      "Server & Storage Architecture",
-      "Active Directory & Identity Integration",
-      "Infrastructure Deployment Coordination"
-    ],
-    icon: "Server",
-    technologies: [
-      "Windows Server",
-      "Active Directory",
-      "DNS/DHCP",
-      "TCP/IP Networking",
-      "AWS Cloud"
-    ]
-  },
-
-  {
-    id: "service-3",
-    title: "IT Project Management & Technology Delivery",
-    subtitle: "PMP-Certified Project Leadership from Planning Through Implementation",
-    description:
-      "Leading technology initiatives from planning and requirements through implementation, stakeholder coordination, risk management, vendor oversight, and operational handoff.",
-    deliverables: [
-      "Project Scope, Schedule & Resource Planning",
-      "Risk & Issue Management",
-      "Vendor & Stakeholder Coordination",
-      "Implementation & Go-Live Management",
-      "Executive Progress Reporting"
-    ],
-    icon: "Briefcase",
-    technologies: [
-      "MS Project",
-      "Trello",
-      "Monday.com",
-      "Visio",
-      "PMP Methodology"
-    ]
-  },
-
-  {
-    id: "service-4",
-    title: "Specialized Systems & Security Integration",
-    subtitle: "Enterprise Video, Access Control & Specialized Technology Integration",
-    description:
-      "Integrating specialized technology systems with enterprise IT infrastructure, including video management, access control, surveillance, identity services, and network environments. Bringing together specialized platforms and core IT infrastructure to support reliable operations.",
-    deliverables: [
-      "Specialized Technology Architecture",
-      "VMS & Access Control Integration",
-      "Enterprise Network & Infrastructure Integration",
-      "System Migration & Upgrade Planning",
-      "Technical Risk & Readiness Assessments"
-    ],
-    icon: "ShieldCheck",
-    technologies: [
-      "Milestone XProtect",
-      "Lenel OnGuard",
-      "CCURE 9000",
-      "Avigilon",
-      "Axis Communications"
-    ]
-  },
-
-  {
-    id: "service-5",
-    title: "Technical Documentation & Operational Readiness",
-    subtitle: "Documentation, Training, Knowledge Transfer & Technology Adoption",
-    description:
-      "Developing technical documentation, operational procedures, training materials, and support resources that help organizations successfully implement, adopt, and operate technology solutions.",
-    deliverables: [
-      "Technical Documentation & SOPs",
-      "System & Operational Runbooks",
-      "Training Materials & Knowledge Transfer",
-      "Support Documentation",
-      "Post-Implementation Operational Handoff"
-    ],
-    icon: "FileText",
-    technologies: [
-      "Microsoft 365",
-      "Visio",
-      "Technical Writing",
-      "Runbook Development",
-      "Training Programs"
-    ]
-  }
+  id: "service-1",
+  title: "Security Systems",
+  subtitle: "Design, Integration, Installation & Support",
+  description:
+    "Helping homeowners and small organizations design, upgrade, install, and support security systems that fit their needs.",
+  deliverables: [
+    "Security System Assessment & Design",
+    "Camera & Video Surveillance",
+    "Access Control",
+    "Intercom & Emergency Systems",
+    "Installation & Configuration",
+    "System Integration & Troubleshooting"
+  ],
+  icon: "ShieldCheck",
+  technologies: [
+    "IP Cameras",
+    "Video Management Systems",
+    "Access Control",
+    "Intercom Systems",
+    "PoE & Network Infrastructure"
+  ]
+},
+{
+  id: "service-2",
+  title: "IT Infrastructure & Support",
+  subtitle: "Networks, Servers, Devices & Everyday IT",
+  description:
+    "Practical IT support for individuals and small organizations, from network and server setup to troubleshooting PCs, printers, and other devices.",
+  deliverables: [
+    "Network Setup & Troubleshooting",
+    "Server & Identity Services",
+    "PC & Device Support",
+    "Printer & Peripheral Support",
+    "IT Infrastructure Setup",
+    "Technology Troubleshooting"
+  ],
+  icon: "Server",
+  technologies: [
+    "Windows",
+    "Windows Server",
+    "Active Directory",
+    "Entra ID",
+    "TCP/IP Networking",
+    "DNS & DHCP",
+    "Wi-Fi & Switching"
+  ]
+},
+{
+  id: "service-3",
+  title: "Technology Project Management",
+  subtitle: "Planning, Coordination & Delivery",
+  description:
+    "Managing technology projects from planning and budgeting through vendor coordination, implementation, testing, and completion.",
+  deliverables: [
+    "Requirements & Project Planning",
+    "Budget & Vendor Evaluation",
+    "Vendor & Schedule Coordination",
+    "Implementation & Cutover",
+    "Testing & Acceptance",
+    "Project Documentation & Closeout"
+  ],
+  icon: "Briefcase",
+  technologies: [
+    "MS Project",
+    "Microsoft 365",
+    "Trello",
+    "Monday.com",
+    "Visio"
+  ]
+},
+{
+  id: "service-4",
+  title: "Technology Assessment & Planning",
+  subtitle: "Know What You Have. Know What You Need.",
+  description:
+    "Reviewing existing technology, identifying outdated systems and risks, and developing practical plans for upgrades and improvements.",
+  deliverables: [
+    "Technology Assessments",
+    "System & Infrastructure Reviews",
+    "Technology Gap Analysis",
+    "Upgrade & Modernization Plans",
+    "Product & Vendor Comparison",
+    "Technology Roadmaps"
+  ],
+  icon: "SearchCheck",
+  technologies: [
+    "Technology Lifecycle Planning",
+    "System Assessment",
+    "Infrastructure Planning",
+    "Vendor Evaluation"
+  ]
+},
+{
+  id: "service-5",
+  title: "Documentation & Training",
+  subtitle: "Make Technology Easier to Understand and Manage",
+  description:
+    "Creating clear documentation and training resources that help people understand, operate, and support their technology.",
+  deliverables: [
+    "System Documentation",
+    "Network & System Diagrams",
+    "Standard Operating Procedures",
+    "User Guides",
+    "Staff Training",
+    "Knowledge Transfer"
+  ],
+  icon: "FileText",
+  technologies: [
+    "Microsoft 365",
+    "Visio",
+    "Technical Documentation",
+    "Training Materials"
+  ]
+}
 ];
 
 export const PROJECTS_DATA: ProjectItem[] = [
