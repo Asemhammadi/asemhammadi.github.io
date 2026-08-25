@@ -264,13 +264,6 @@ export const CERTIFICATIONS: CertificationItem[] = [
   },
   {
     id: "cert-10",
-    name: "HERO|SHERO Shepherding Systems Certification",
-    issuer: "Integrated Certification Program",
-    status: "Completed",
-    iconName: "Award"
-  },
-  {
-    id: "cert-11",
     name: "SAFe Agilist Certification (SAFe)",
     issuer: "Scaled Agile",
     status: "In Progress",
