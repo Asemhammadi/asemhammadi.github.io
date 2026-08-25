@@ -391,28 +391,39 @@ export const SERVICES_DATA: ServiceItem[] = [
 export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "proj-1",
-    title: "BMC Brighton Public Safety Systems Upgrade",
+    title: "BMC Brighton Public Safety Systems Modernization",
     clientOrOrg: "Boston Medical Center",
     category: "Hospital Systems",
-    period: "2024 – 2025",
-    summary: "Led the security technology integration for a newly acquired hospital facility, aligning access control, CCTV, and VMS with BMC's enterprise standards.",
-    fullDescription: "When Boston Medical Center acquired the Brighton hospital facility, the existing security systems were disparate and outdated. As Systems Integration Lead, Asem directed the complete technology alignment project across Public Safety, IT, Facilities, contractors, and hospital leadership.",
+    period: "October 2024 – March 2026",
+    summary: "Led the technical leadership, systems integration, and project coordination for a comprehensive Public Safety modernization initiative, replacing outdated security technologies and integrating the upgraded systems into BMC's enterprise environment.",
+    fullDescription: "Following Boston Medical Center's acquisition of the Brighton hospital facility, the existing Public Safety systems were outdated, unreliable, and difficult to maintain or recover. As a Senior Systems Integrator, Asem provided technical leadership and project coordination throughout the modernization initiative, working with Public Safety leadership, hospital leadership, BMC IT teams, vendors, contractors, and a third-party systems integrator. The project modernized access control, video surveillance, emergency communication, patrol management, and parking garage systems while bringing the upgraded technologies into BMC's IT environment.",
     challenges: [
-      "Integrating legacy, non-standard card readers and analog CCTV feeds into BMC's central Milestone XProtect and Lenel infrastructure.",
-      "Maintaining active 24x7 patient care operations during hardware cutover and wiring replacement.",
-      "Strict compliance timelines required by healthcare regulatory bodies."
+      "Modernizing multiple legacy Public Safety systems with different technologies and platforms.",
+      "Integrating new security technologies with BMC network, infrastructure, cybersecurity, and information security requirements.",
+      "Working with existing infrastructure and wiring limitations within an operating hospital environment.",
+      "Coordinating multiple BMC IT teams, vendors, contractors, and stakeholders.",
+      "Managing project budget development, vendor proposals, and approval requirements.",
+      "Resolving unexpected technical issues during implementation, testing, and post-cutover operations."
     ],
     solutions: [
-      "Designed a phased migration plan replacing obsolete headend equipment with IP-based controllers and Milestone servers.",
-      "Coordinated night-shift maintenance windows with nursing and security management to minimize operational disruption.",
-      "Standardized all badge access profiles to sync automatically with Active Directory employee records."
+      "Migrated the access control environment from C•CURE 800 to C•CURE 9000 across approximately 16 panels and 70 doors.",
+      "Replaced the legacy Milestone XProtect VMS with Motorola Alta and expanded video surveillance from approximately 56 existing cameras to 163 Avigilon Alta cameras for improved interior and exterior coverage.",
+      "Implemented five Verkada emergency call boxes at key hospital entrances as part of the facility's Laura's Law compliance effort.",
+      "Implemented Omnigo Patrol Management / TourGuard to modernize patrol management and supported the upgrade of the parking garage security system.",
+      "Provided technical requirements and direction, reviewed proposed designs and deliverables, participated in testing and acceptance, identified deficiencies, and approved completed work delivered by the third-party integrator.",
+      "Coordinated integration requirements with BMC Network, Cybersecurity, Information Security, Server/Infrastructure, and IT Field Services teams.",
+      "Supported system configuration, troubleshooting, cutover activities, documentation, vendor coordination, and Public Safety training."
     ],
     results: [
-      "Successfully integrated 150+ access control doors and 200+ IP camera feeds into central BMC monitoring.",
-      "Achieved 100% go-live readiness on schedule with zero security downtime.",
-      "Trained 40+ Public Safety officers and dispatch staff on new VMS interfaces."
+      "Modernized the facility's Public Safety technology environment and brought the upgraded systems in line with BMC standards.",
+      "Successfully integrated the upgraded Public Safety systems into the BMC network and enterprise environment.",
+      "Expanded video surveillance coverage from approximately 56 to 163 cameras, significantly improving interior and exterior visibility.",
+      "Successfully migrated approximately 70 access-controlled doors across 16 panels from C•CURE 800 to C•CURE 9000.",
+      "Improved the facility's physical security posture, system reliability, maintainability, and operational resilience.",
+      "Successfully implemented modern patrol management and upgraded parking garage security capabilities.",
+      "Trained Public Safety management on the upgraded systems and supported the transition to the modernized environment."
     ],
-    technologies: ["Milestone XProtect", "Lenel OnGuard", "Axis IP Cameras", "Windows Server", "Active Directory", "MS Project"],
+    technologies: ["C•CURE 800", "C•CURE 9000", "Milestone XProtect", "Motorola Alta", "Avigilon Alta", "Verkada", "Omnigo Patrol Management", "TourGuard", "Windows Server", "Active Directory", "Network Infrastructure", "MS Project"],
     featured: true,
     imageSeed: "bmc-brighton"
   },
