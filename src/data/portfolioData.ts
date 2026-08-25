@@ -454,84 +454,58 @@ export const PROJECTS_DATA: ProjectItem[] = [
     featured: true,
     imageSeed: "campus-redesign"
   },
-  {
+   {
     id: "proj-3",
-    title: "Enterprise Access Control & VMS Modernization",
-    clientOrOrg: "Boston Medical Center / Healthcare Operations",
+    title: "BMC Public Safety Systems Lifecycle Modernization",
+    clientOrOrg: "Boston Medical Center",
     category: "Physical Security",
-    period: "2022 – 2024",
-    summary: "Architected system upgrades unifying Lenel OnGuard, CCURE 9000, and Milestone XProtect into a central command infrastructure.",
-    fullDescription: "A strategic initiative to centralize physical security management across multiple hospital facilities, enabling real-time video analytics, centralized badging, and instant incident response.",
+    period: "Ongoing Lifecycle Program",
+    summary: "Led, with a teammate, the ongoing modernization and lifecycle management of BMC Public Safety systems, bringing critical technologies to current supported versions while decommissioning legacy platforms and upgrading supporting hardware and infrastructure.",
+    fullDescription: "An ongoing Public Safety technology lifecycle program focused on keeping BMC's critical security and Public Safety systems current, supported, reliable, and maintainable. Working closely with a teammate, BMC IT teams, and technology vendors, Asem helped develop and execute modernization plans across approximately 10 systems and platforms, including access control, video management, cameras, servers, investigation systems, audio recording, infant protection, CAD, and other Public Safety applications. The program also included upgrading supporting hardware and infrastructure and safely transitioning from legacy platforms to modern supported solutions.",
     challenges: [
-      "Managing dual access control systems (Lenel and CCURE) while transitioning to unified badge credentials.",
-      "Bandwidth constraints for streaming hundreds of high-definition video feeds across enterprise WAN connections.",
-      "Configuring strict role-based permissions for medical staff, security officers, and external contractors."
+      "Managing multiple Public Safety systems with different vendors, technologies, lifecycle schedules, and end-of-support requirements.",
+      "Maintaining 24/7 Public Safety operations while upgrading critical systems and infrastructure.",
+      "Prioritizing modernization efforts based on end-of-life status, system age, available budget, and business and operational criticality.",
+      "Coordinating vendors and multiple BMC IT teams across network, server, infrastructure, security, and other technical dependencies.",
+      "Migrating from legacy systems while preserving required configurations, data, integrations, and operational capabilities.",
+      "Maintaining compatibility between new technologies and existing BMC infrastructure during phased modernization.",
+      "Scheduling upgrades and cutovers for operationally critical systems while minimizing disruption.",
+      "Safely decommissioning obsolete hardware and software after successful validation of replacement systems."
     ],
     solutions: [
-      "Configured dedicated VLANs and multicast streaming profiles to optimize video throughput.",
-      "Implemented automated badge provisioning rules linked with HR Active Directory accounts.",
-      "Created detailed visual maps in Milestone for instant camera view retrieval during emergency dispatch."
+      "Developed modernization requirements and lifecycle priorities with a teammate based on system age, end-of-life/end-of-support status, budget, and operational criticality.",
+      "Modernized approximately 10 Public Safety systems and platforms, including access control, VMS, cameras, servers, investigation, audio recording, infant protection, CAD, and other critical applications.",
+      "Worked closely with BMC IT and technology vendors to replace or upgrade approximately 20 servers and supporting infrastructure as required by the modernized systems.",
+      "Supported modernization involving approximately 60 cameras and 80 access-control panels.",
+      "Coordinated the migration from legacy platforms to current supported technologies, including planning, configuration/data migration where applicable, testing, validation, and cutover.",
+      "Coordinated the safe decommissioning of three legacy systems after successful validation of their replacement platforms.",
+      "Worked with vendors and BMC IT teams to troubleshoot technical issues, maintain system compatibility, and resolve unexpected problems throughout the modernization lifecycle.",
+      "Maintained technical and project documentation and coordinated stakeholder communication throughout planning, implementation, testing, and decommissioning activities."
     ],
     results: [
-      "Centralized video surveillance monitoring for 500+ cameras across 3 campuses.",
-      "Decreased badge access provisioning lead time from 48 hours to under 15 minutes.",
-      "Earned BMC Certificate of Achievement for excellence in enterprise security system integration."
+      "Brought critical Public Safety systems to current supported versions and established a sustainable lifecycle modernization approach.",
+      "Successfully decommissioned three legacy Public Safety systems and reduced dependence on obsolete hardware and software.",
+      "Modernized approximately 10 Public Safety systems and platforms, 20 servers, 60 cameras, and 80 access-control panels.",
+      "Improved system reliability, security, supportability, maintainability, and compatibility with BMC's IT environment.",
+      "Reduced operational risk associated with aging, unsupported, and obsolete Public Safety technologies.",
+      "Improved the ability of Public Safety and IT teams to maintain, troubleshoot, and support critical systems.",
+      "Strengthened the long-term reliability and operational resilience of Public Safety technology supporting the BMC main campus."
     ],
-    technologies: ["Milestone XProtect", "Lenel OnGuard", "CCURE 9000", "Active Directory", "TCP/IP WAN", "Windows Server 2019"],
+    technologies: [
+      "Access Control",
+      "Video Management Systems",
+      "IP Cameras",
+      "Windows Server",
+      "Public Safety Applications",
+      "Investigation Systems",
+      "Audio Recording Systems",
+      "Infant Protection Systems",
+      "CAD Systems",
+      "IT Infrastructure"
+    ],
     featured: true,
     imageSeed: "access-control"
   },
-  {
-    id: "proj-4",
-    title: "IMAS Production Network & Security Infrastructure",
-    clientOrOrg: "IMAS Malaysia",
-    category: "Network Infrastructure",
-    period: "2017 – 2019",
-    summary: "Engineered robust network infrastructure, security firewall configurations, and system failover mechanisms for enterprise production environments.",
-    fullDescription: "Deployed enterprise-grade networking solutions for corporate client infrastructure in Malaysia. Focused on hardening network security policies, minimizing downtime, and supporting technical operations.",
-    challenges: [
-      "Frequent network latency bottlenecks during peak traffic times.",
-      "Inconsistent security policy enforcement across remote branch offices."
-    ],
-    solutions: [
-      "Redesigned core network routing and implemented Quality of Service (QoS) rules.",
-      "Configured site-to-site IPsec VPN tunnels with automated failover links.",
-      "Established strict firewall rule sets and intrusion detection monitoring."
-    ],
-    results: [
-      "Achieved 99.9% network uptime for production operations.",
-      "Reduced network latency by 40% and awarded Certificate of Achievement at IMAS."
-    ],
-    technologies: ["TCP/IP", "DNS/DHCP", "Firewalls", "VPN Tunnels", "Switching & Routing", "Network Diagnostics"],
-    featured: false,
-    imageSeed: "imas-network"
-  },
-  {
-    id: "proj-5",
-    title: "UST University IT & Windows Server Infrastructure",
-    clientOrOrg: "University of Science and Technology (UST)",
-    category: "Project Management",
-    period: "2010 – 2015",
-    summary: "Managed campus-wide IT system installations, Active Directory domain management, and technical support for 5,000+ university users.",
-    fullDescription: "Overseeing university IT infrastructure operations, Windows Server maintenance, network cabling, user accounts, and technical staff training.",
-    challenges: [
-      "High volume of support tickets across multiple academic departments.",
-      "Need for standardized user access security and virus protection across hundreds of workstations."
-    ],
-    solutions: [
-      "Deployed centralized Active Directory Group Policy Objects (GPO) for system lockdown and automatic updates.",
-      "Established a structured ticketing workflow and technical documentation library for university staff.",
-      "Conducted regular cybersecurity and basic IT safety workshops for non-technical faculty."
-    ],
-    results: [
-      "Standardized computer laboratory images and server backup routines.",
-      "Recognized with Certificate of Appreciation (2015) for outstanding IT support and infrastructure improvements."
-    ],
-    technologies: ["Windows Server 2012 R2", "Active Directory", "Group Policy", "Desktop Systems", "User Training"],
-    featured: false,
-    imageSeed: "ust-infrastructure"
-  }
-];
 
 export const BLOG_POSTS: BlogPost[] = [
   {
