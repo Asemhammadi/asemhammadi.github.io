@@ -7,13 +7,7 @@ import { FocusReticle } from './FocusReticle';
 
 export function ProjectsSection() {
   const { projectsData } = useSiteData();
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
-
-  const categories = ['All', 'Hospital Systems', 'Physical Security', 'Network Infrastructure', 'Project Management'];
-
-  const filteredProjects = projectsData
-    .filter(p => selectedCategory === 'All' || p.category === selectedCategory);
 
   const panelRef = useRef<HTMLDivElement>(null);
   const closeProjectModal = useCallback(() => setActiveModalProject(null), []);
@@ -42,27 +36,9 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              id={`cat-filter-${cat.toLowerCase().replace(/\s+/g, '-')}`}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
-                selectedCategory === cat
-                  ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
-                  : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-reveal data-reveal-stagger>
-          {filteredProjects.map((proj) => (
+          {projectsData.map((proj) => (
             <div
               key={proj.id}
               className="relative bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 group"
