@@ -197,3 +197,79 @@ export function ProjectsSection() {
                   <AlertTriangle className="w-4 h-4" />
                   <span>Key Site & Operational Challenges</span>
                 </h4>
+                <ul className="space-y-2">
+                  {activeModalProject.challenges.map((c, i) => (
+                    <li key={i} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0 mt-1.5" />
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Solutions Grid */}
+              <div className="bg-slate-950/80 p-5 rounded-2xl border border-slate-800 space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-teal-400 flex items-center gap-1.5">
+                  <Layers className="w-4 h-4" />
+                  <span>Engineering Solutions Implemented</span>
+                </h4>
+                <ul className="space-y-2">
+                  {activeModalProject.solutions.map((s, i) => (
+                    <li key={i} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0 mt-1.5" />
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Results & Impact */}
+              <div className="bg-emerald-500/10 p-5 rounded-2xl border border-emerald-500/30 space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>Measurable Results & Outcomes</span>
+                </h4>
+                <ul className="space-y-2">
+                  {activeModalProject.results.map((r, i) => (
+                    <li key={i} className="text-xs sm:text-sm text-slate-200 flex items-start gap-2 font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Technologies */}
+              <div>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                  System Hardware & Software Stack
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {activeModalProject.technologies.map((tech, i) => (
+                    <span key={i} className="text-xs px-3 py-1 rounded-lg bg-slate-800 text-emerald-300 font-mono border border-slate-700">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-6 border-t border-slate-800 flex justify-end">
+              <button
+                id="close-modal-footer-btn"
+                onClick={closeProjectModal}
+                className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors"
+              >
+                Close Case Study
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
+
+    </section>
+  );
+}
