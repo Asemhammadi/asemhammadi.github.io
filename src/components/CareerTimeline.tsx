@@ -27,7 +27,7 @@ export function CareerTimeline() {
             Career History & Education
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            From university network technician to Senior Systems Integration Lead at Boston Medical Center.
+            From university computer lab technician to Senior IT Leader across healthcare, education, and enterprise technology.
           </p>
         </div>
 
