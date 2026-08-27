@@ -44,7 +44,7 @@ export function BlogSection() {
             Technical Articles & Thought Leadership
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            Articles authored by Asem Alhammadi on physical security integration, healthcare IT networks, and PMP site readiness.
+            Articles authored by Asem Alhammadi on IT infrastructure, network engineering, systems integration, and PMP project delivery.
           </p>
         </div>
 
