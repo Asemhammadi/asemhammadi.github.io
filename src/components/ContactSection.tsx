@@ -94,7 +94,7 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
             Get In Touch With Asem
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            Open for Senior Systems Integration Lead roles, IT Project Management consulting, and enterprise physical security advisory.
+            Open for Senior IT Leadership roles, systems integration consulting, and enterprise technology advisory.
           </p>
         </div>
 
