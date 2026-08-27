@@ -39,7 +39,7 @@ export function ServicesSection({ onSelectServiceForContact }: ServicesSectionPr
             Services & Consulting Capabilities
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            End-to-end technical leadership bridging physical security hardware, IT infrastructure, and healthcare site readiness.
+            End-to-end technical leadership across enterprise IT infrastructure, network engineering, systems integration, and project delivery.
           </p>
         </div>
 
