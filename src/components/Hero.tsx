@@ -31,11 +31,11 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                 Open to Senior IT Leadership Roles
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-medium">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg--900 border border--800 text--300 text-xs font-medium">
                 <Award className="w-3.5 h-3.5 text-emerald-400" />
                 PMP® Certified
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-medium">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg--900 border border--800 text--300 text-xs font-medium">
                 <Building2 className="w-3.5 h-3.5 text-teal-400" />
                 Multi-Industry IT Experience
               </span>
@@ -46,13 +46,13 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight text-balance">
                 {personalInfo.name}, <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">{personalInfo.credentials}</span>
               </h1>
-              <p className="text-xl sm:text-2xl font-semibold text-slate-200">
+              <p className="text-xl sm:text-2xl font-semibold text--200">
                 {personalInfo.title}
               </p>
             </div>
 
             {/* Professional Summary */}
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            <p className="text--300 text-base sm:text-lg leading-relaxed max-w-2xl">
               {personalInfo.summary}
             </p>
 
@@ -160,7 +160,7 @@ export function Hero({ onOpenResumeModal, onNavigateSection }: HeroProps) {
                     <Shield className="w-4 h-4 text-emerald-400 shrink-0" />
                   </div>
                   <p className="text-xs text-emerald-400 font-medium">{personalInfo.title}</p>
-                  <p className="text-[11px] text-slate-300">Boston Medical Center • Public Safety & Systems Integration</p>
+                  <p className="text-[11px] text-slate-300">15+ Years in IT & Systems Integration</p>
                 </div>
               </div>
 
