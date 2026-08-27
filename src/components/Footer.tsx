@@ -27,7 +27,7 @@ export function Footer({ onOpenResumeModal }: FooterProps) {
               </span>
             </div>
             <p className="text-slate-400 text-xs leading-relaxed max-w-md">
-              {PERSONAL_INFO.title}. Specializing in enterprise physical security integration, hospital acquisitions, network infrastructure, and PMP® project delivery in 24x7 operations.
+              {PERSONAL_INFO.title}. Specializing in enterprise IT infrastructure, network engineering, systems integration, and PMP® project delivery across healthcare, education, and enterprise environments.
             </p>
           </div>
 
