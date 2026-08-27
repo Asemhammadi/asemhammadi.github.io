@@ -117,7 +117,7 @@ ${TECHNICAL_SKILLS.map(s => `${s.name}`).join(' | ')}
               ASEM ALHAMMADI, M.Sc., PMP®
             </h1>
             <p className="text-xs sm:text-sm font-semibold text-emerald-400 print:text-emerald-800">
-              PROJECT MANAGER & SYSTEMS INTEGRATION LEAD | PUBLIC SAFETY TECHNOLOGY | 24X7 HEALTHCARE OPERATIONS
+              SENIOR IT LEADER | SYSTEMS INTEGRATION & ENTERPRISE INFRASTRUCTURE | PMP® PROJECT DELIVERY
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-slate-400 print:text-gray-700 pt-1">
               <span>{PERSONAL_INFO.location}</span>
