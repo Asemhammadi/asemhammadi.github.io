@@ -145,13 +145,13 @@ ${TECHNICAL_SKILLS.map(s => `${s.name}`).join(' | ')}
             <h2 className="text-sm font-bold uppercase tracking-wider text-emerald-400 print:text-black border-b border-slate-800 print:border-black pb-1">
               Targeted Strengths & Core Competencies
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs text-slate-300 print:text-gray-800 font-medium">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs text-slate-300 print:text-gray-800 font-medium">
+              <div>• Enterprise IT Infrastructure</div>
+              <div>• Network Engineering & Administration</div>
               <div>• Project Delivery & PMP Methodology</div>
-              <div>• Vendor Coordination & Installation QA</div>
-              <div>• Systems Integration with IT Infrastructure</div>
-              <div>• Construction / Renovation Site Readiness</div>
-              <div>• Risk & Issue Tracking</div>
-              <div>• Operational Handoff & Training SOPs</div>
+              <div>• Systems Integration & Architecture</div>
+              <div>• Vendor & Stakeholder Coordination</div>
+              <div>• Risk & Issue Management</div>
             </div>
           </div>
 
