@@ -19,7 +19,7 @@ export function SkillsCertifications() {
     }
   };
 
-  const categories = ['Public Safety Systems', 'Project & Governance', 'IT & Networking', 'Engineering & Research'];
+  const categories = ['IT Infrastructure & Networking', 'Project & Program Management', 'Security & Surveillance Systems', 'Engineering & Technical Research'];
 
   return (
     <section id="skills" className="py-20 bg-slate-900/60 relative border-t border-slate-800 overflow-hidden">
