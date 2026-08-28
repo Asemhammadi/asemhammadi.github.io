@@ -636,7 +636,7 @@ High-definition IP cameras deliver exceptional clarity, but streaming hundreds o
   }
 ];
 
-[
+export const TECHNICAL_SKILLS = [
   { name: "Milestone XProtect VMS", category: "Security & Surveillance Systems", level: 95 },
   { name: "Lenel OnGuard Access Control", category: "Security & Surveillance Systems", level: 95 },
   { name: "CCURE 9000 Access Control", category: "Security & Surveillance Systems", level: 90 },
