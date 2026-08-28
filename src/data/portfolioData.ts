@@ -636,24 +636,25 @@ High-definition IP cameras deliver exceptional clarity, but streaming hundreds o
   }
 ];
 
-  { name: "Milestone XProtect VMS", category: "Security & Surveillance Systems", level: 95 };
-  { name: "Lenel OnGuard Access Control", category: "Security & Surveillance Systems", level: 95 };
-  { name: "CCURE 9000 Access Control", category: "Security & Surveillance Systems", level: 90 };
-  { name: "Axis & Avigilon IP Cameras", category: "Security & Surveillance Systems", level: 95 };
-  { name: "Hikvision & Lorex CCTV", category: "Security & Surveillance Systems", level: 90 };
-  { name: "PMP® Project Management", category: "Project & Program Management", level: 95 };
-  { name: "MS Project, Trello, Monday.com", category: "Project & Program Management", level: 90 };
-  { name: "Risk & Issue Remediation", category: "Project & Program Management", level: 95 };
-  { name: "Construction Site Readiness", category: "Project & Program Management", level: 95 };
-  { name: "Windows Server 2019/2012", category: "IT Infrastructure & Networking", level: 90 };
-  { name: "Active Directory, DNS/DHCP", category: "IT Infrastructure & Networking", level: 92 };
-  { name: "pfSense Firewall & VPNs", category: "IT Infrastructure & Networking", level: 92 };
-  { name: "TCP/IP & Network Security", category: "IT Infrastructure & Networking", level: 90 };
-  { name: "AWS Cloud Infrastructure", category: "IT Infrastructure & Networking", level: 85 };
-  { name: "MATLAB & Signal Processing", category: "Engineering & Technical Research", level: 88 };
-  { name: "LTE-A & Wireless RF Planning", category: "Engineering & Technical Research", level: 85 };
-  { name: "Arduino, Proteus & VHDL", category: "Engineering & Technical Research", level: 85 };
-  { name: "C/C++, Java & JavaScript", category: "Engineering & Technical Research", level: 82 };
+[
+  { name: "Milestone XProtect VMS", category: "Security & Surveillance Systems", level: 95 },
+  { name: "Lenel OnGuard Access Control", category: "Security & Surveillance Systems", level: 95 },
+  { name: "CCURE 9000 Access Control", category: "Security & Surveillance Systems", level: 90 },
+  { name: "Axis & Avigilon IP Cameras", category: "Security & Surveillance Systems", level: 95 },
+  { name: "Hikvision & Lorex CCTV", category: "Security & Surveillance Systems", level: 90 },
+  { name: "PMP® Project Management", category: "Project & Program Management", level: 95 },
+  { name: "MS Project, Trello, Monday.com", category: "Project & Program Management", level: 90 },
+  { name: "Risk & Issue Remediation", category: "Project & Program Management", level: 95 },
+  { name: "Construction Site Readiness", category: "Project & Program Management", level: 95 },
+  { name: "Windows Server 2019/2012", category: "IT Infrastructure & Networking", level: 90 },
+  { name: "Active Directory, DNS/DHCP", category: "IT Infrastructure & Networking", level: 92 },
+  { name: "pfSense Firewall & VPNs", category: "IT Infrastructure & Networking", level: 92 },
+  { name: "TCP/IP & Network Security", category: "IT Infrastructure & Networking", level: 90 },
+  { name: "AWS Cloud Infrastructure", category: "IT Infrastructure & Networking", level: 85 },
+  { name: "MATLAB & Signal Processing", category: "Engineering & Technical Research", level: 88 },
+  { name: "LTE-A & Wireless RF Planning", category: "Engineering & Technical Research", level: 85 },
+  { name: "Arduino, Proteus & VHDL", category: "Engineering & Technical Research", level: 85 },
+  { name: "C/C++, Java & JavaScript", category: "Engineering & Technical Research", level: 82 }
 ];
 
 export const AWARDS_RECOGNITION = [
