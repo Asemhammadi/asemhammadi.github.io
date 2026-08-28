@@ -433,7 +433,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     title: "BMC Campus Redesign 2.0 Security Technology",
     clientOrOrg: "Boston Medical Center",
     category: "Physical Security",
-    period: "2021 – Present",
+    period: "2021 – 2025",
     summary: "Managed security technology deployment across active construction and renovation areas including Crosstown 7th Floor, 960 Mass Ave, Yawkey 5/6, and Menino Lobby.",
     fullDescription: "A multi-year campus redesign project transforming key patient care, outpatient, and administrative spaces across Boston Medical Center. Asem managed physical security site readiness, vendor coordination, and system integration.",
     challenges: [
