@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
   // Imported, not a hardcoded path, so Vite fingerprints it and resolves the
   // deployed base path. Empty string here falls back to the monogram plate.
   photoUrl: portrait,
-  tagline: "Bridging Technology, Systems Integration & Mission-Critical Operations",
+  tagline: "Leading Enterprise IT, Systems Integration & Technology Strategy",
   location: "Malden, MA 02148",
   email: "asemalhamady92@yahoo.com",
   linkedin: "https://www.linkedin.com/in/asem-alhammadi",
