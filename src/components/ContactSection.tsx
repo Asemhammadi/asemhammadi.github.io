@@ -192,11 +192,12 @@ export function ContactSection({ selectedServiceInterest, onOpenResumeModal }: C
                       className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500 transition-colors"
                     >
                       <option value="">-- General / Career Opportunity --</option>
-                      <option value="Physical Security Systems Architecture">Physical Security Systems Architecture</option>
-                      <option value="Systems Integration with IT Infrastructure">Systems Integration with IT Infrastructure</option>
-                      <option value="IT Project Management & Vendor Oversight">IT Project Management & Vendor Oversight</option>
-                      <option value="Construction & Site Readiness Support">Construction & Site Readiness Support</option>
-                      <option value="Technical Documentation & Operational Training">Technical Documentation & Operational Training</option>
+                      <option value="Enterprise IT Infrastructure & Networking">Enterprise IT Infrastructure & Networking</option>
+                      <option value="Systems Integration">Systems Integration</option>
+                      <option value="IT Project Management & Leadership">IT Project Management & Leadership</option>
+                      <option value="Cloud Architecture & Strategy">Cloud Architecture & Strategy</option>
+                      <option value="Physical Security Systems">Physical Security Systems</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                 </div>
