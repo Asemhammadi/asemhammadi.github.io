@@ -32,7 +32,7 @@ export function ProjectsSection() {
             Portfolio Projects & Case Studies
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            Real-world enterprise systems integration, hospital acquisitions, and physical security upgrades.
+            Real-world enterprise IT infrastructure, systems integration, and technology delivery projects.
           </p>
         </div>
 
